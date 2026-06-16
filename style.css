@@ -157,6 +157,14 @@ p { font-weight: var(--section-body-weight) !important; }
   text-transform: uppercase;
 }
 
+/* ── Disable per-word reveal clip so italic glyphs are never cut off ──
+   The .word-mask clip box was shearing italic letters (Craftsman, Project…).
+   Headings now render as plain static text, exactly like the hero (which
+   never clipped because it has no word-mask). Sacrifices the per-word
+   slide-up animation only — all other animations are untouched. */
+.word-mask { clip-path: none !important; overflow: visible !important; padding-bottom: 0 !important; margin-bottom: 0 !important; }
+.word-mask-inner { transform: none !important; }
+
 /* ── Chapter-numbered eyebrow hover (Our Story / Our Gallery) ── */
 .eyebrow-chapter:hover .eyebrow-label { color: var(--gs-accent); }
 
