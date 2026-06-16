@@ -165,6 +165,14 @@ p { font-weight: var(--section-body-weight) !important; }
 .word-mask { clip-path: none !important; overflow: visible !important; padding-bottom: 0 !important; margin-bottom: 0 !important; }
 .word-mask-inner { transform: none !important; }
 
+/* Headings flow as ONE plain block of text, identical to the hero (which never
+   clips). The heading stops being a flex container, and its per-word spans
+   become plain inline text so italic glyphs flow freely. Scoped to h1/h2/h3
+   only, so eyebrow taglines are untouched. */
+.section-heading, h1.section-heading, h2.section-heading, h3.section-heading { display: block !important; }
+h1 .word-mask, h2 .word-mask, h3 .word-mask,
+h1 .word-mask-inner, h2 .word-mask-inner, h3 .word-mask-inner { display: inline !important; }
+
 /* ── Chapter-numbered eyebrow hover (Our Story / Our Gallery) ── */
 .eyebrow-chapter:hover .eyebrow-label { color: var(--gs-accent); }
 
