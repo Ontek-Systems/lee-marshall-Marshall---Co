@@ -63,7 +63,11 @@
 
 /* ── Base reset ── */
 *, *::before, *::after { box-sizing: border-box; }
+/* Stop horizontal drift on mobile. `clip` (not `hidden`) so sticky scroll
+   sections (gallery, process) keep working. */
+html { overflow-x: clip; }
 body {
+  overflow-x: clip;
   font-family: var(--site-font) !important;
   font-weight: var(--section-body-weight) !important;
   font-size: var(--section-body-size);
