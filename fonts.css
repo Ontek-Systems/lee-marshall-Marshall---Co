@@ -1,0 +1,68 @@
+/* ============================================================
+   FONT CONTROL — TO CHANGE THE FONT, TELL CLAUDE THE FONT NAME.
+   Claude updates: (1) the @font-face below, (2) style.css body/h1/h2.../font-heading/font-body rules.
+   DO NOT use CSS variables — Tailwind @theme swallows them.
+   1. Uncomment the @font-face block for your chosen font below
+   2. Update the font name in the THREE --font-heading lines:
+      - Line ~60 in this file (:root block)
+      - Line ~49 in index.html (@theme block)
+   ============================================================ */
+
+/* --- ACTIVE: Griffiths (headings) + Satoshi (body) --- */
+@font-face {
+    font-family: 'Griffiths';
+    src: url('assets/fonts/griffiths/Griffiths.otf') format('opentype');
+    font-weight: 100 900; font-style: normal; font-display: swap;
+}
+@font-face {
+    font-family: 'Satoshi';
+    src: url('assets/fonts/Satoshi/Satoshi-Variable.woff2') format('woff2');
+    font-weight: 300 900; font-style: normal; font-display: swap;
+}
+@font-face {
+    font-family: 'Satoshi';
+    src: url('assets/fonts/Satoshi/Satoshi-VariableItalic.woff2') format('woff2');
+    font-weight: 300 900; font-style: italic; font-display: swap;
+}
+
+/* --- Available (uncomment to activate) ---
+
+@font-face {
+    font-family: 'Magnolia Script';
+    src: url('assets/fonts/magnolia_script/Magnolia Script.otf') format('opentype');
+    font-weight: 400; font-style: normal; font-display: swap;
+}
+
+@font-face {
+    font-family: 'Bucklane Script';
+    src: url('assets/fonts/bucklane_script/BucklaneScript_PERSONAL_USE_ONLY.otf') format('opentype');
+    font-weight: 400; font-style: normal; font-display: swap;
+}
+
+@font-face {
+    font-family: 'Ballantines Serial';
+    src: url('assets/fonts/Ballantines_Serial/ballantines-serial.otf') format('opentype');
+    font-weight: 400; font-style: normal; font-display: swap;
+}
+
+@font-face {
+    font-family: 'Didot';
+    src: url('assets/fonts/didot-2/Didot.otf') format('opentype');
+    font-weight: 400; font-style: normal; font-display: swap;
+}
+
+*/
+
+/* --- Elicit Script: always loaded (Lee Marshall signature) --- */
+@font-face {
+    font-family: 'Elicit Script';
+    src: url('assets/fonts/ElicitScript-SemiBold.otf') format('opentype');
+    font-weight: 600; font-style: normal; font-display: swap;
+}
+
+/* ── STEP 2: update the name here to match what you activated above ── */
+:root {
+    --font-heading: 'Griffiths', sans-serif;
+    --font-body:    'Satoshi', sans-serif;
+    --font-script:  'Elicit Script', cursive;
+}

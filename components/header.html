@@ -1,0 +1,370 @@
+<header id="site-header"
+    class="fixed w-full top-0 left-0 z-50 transition-all duration-500 bg-transparent text-white border-b border-transparent">
+
+    <style>
+      .tb-outer { overflow: hidden; width: 100%; }
+      .tb-scroll { display: flex; align-items: center; justify-content: center; }
+      .tb-content { display: flex; align-items: center; gap: 1.5rem; }
+      .tb-sep { color: rgba(255,255,255,0.3); }
+      @keyframes tbMarquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+      .tb-scroll { width: max-content; justify-content: flex-start; animation: tbMarquee 35s linear infinite; }
+      @media (min-width: 1024px) { .tb-scroll { animation-duration: 20s; } }
+      .tb-content { gap: 2.25rem; padding-right: 2.25rem; }
+      .tb-sep { display: inline-block; }
+      #top-banner { max-height: 0; opacity: 0; overflow: hidden; transition: max-height 0.5s ease, opacity 0.5s ease; }
+      #top-banner svg { color: #e8b238; width: 0.875rem !important; height: 0.875rem !important; }
+      #top-banner .tb-content a,
+      #top-banner .tb-content span { transition: color 0.15s ease; }
+      #top-banner .tb-content a:hover,
+      #top-banner .tb-content span:hover { color: #e8b238; }
+      .nav-link {
+        transition: color 0.15s ease-in-out;
+        position: relative;
+        padding-top: 4px;
+        padding-bottom: 4px;
+      }
+      .nav-link:hover { color: #e8b238 !important; }
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: #e8b238;
+        transition: width 0.2s ease;
+      }
+      .nav-link:hover::after { width: 100%; }
+      .nav-link.nav-active { color: #e8b238 !important; }
+      .nav-link.nav-active::after { width: 100%; }
+    </style>
+    <div id="top-banner" class="site-banner w-full py-2.5 text-center transition-all duration-150 tb-outer" style="background:#222222;">
+      <div class="tb-scroll font-body text-[10px] sm:text-xs text-white/90 tracking-widest uppercase">
+        
+        <!-- Main Content -->
+        <div class="tb-content">
+          <!-- Facebook -->
+          <a href="https://www.facebook.com/marshallandcohomeimprovements" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 hover:!text-[#e8b238] transition-colors duration-150 whitespace-nowrap">
+            <svg class="w-3.5 h-3.5 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
+            Follow Us
+          </a>
+          <span class="tb-sep hidden lg:inline">|</span>
+          
+          <!-- Email -->
+          <a href="mailto:info@marshallandco.uk" class="flex items-center gap-1.5 hover:!text-[#e8b238] transition-colors duration-150 whitespace-nowrap">
+            <svg class="w-3.5 h-3.5 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            info@marshallandco.uk
+          </a>
+          <span class="tb-sep hidden lg:inline">|</span>
+          
+          <!-- 5-Star Google Service -->
+          <span class="flex items-center gap-1.5 whitespace-nowrap">
+            <svg class="w-3.5 h-3.5 shrink-0 text-[#e8b238]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            5-Star Google Service
+          </span>
+          <span class="tb-sep hidden lg:inline">|</span>
+
+          <!-- Free Quotes -->
+          <span class="flex items-center gap-1.5 whitespace-nowrap">
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            Free Quotes
+          </span>
+          <span class="tb-sep hidden lg:inline">|</span>
+
+          <!-- Fully Insured -->
+          <span class="flex items-center gap-1.5 whitespace-nowrap">
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+            Fully Insured
+          </span>
+          <span class="tb-sep hidden lg:inline">|</span>
+
+          <!-- Opening Days/Time -->
+          <span class="flex items-center gap-1.5 whitespace-nowrap">
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            Mon-Sat 8am-6pm
+          </span>
+          <span class="tb-sep hidden lg:inline">|</span>
+
+          <!-- Phone -->
+          <a href="tel:07940568877" class="flex items-center gap-1.5 hover:!text-[#e8b238] transition-colors duration-150 whitespace-nowrap">
+            <svg class="w-3.5 h-3.5 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.45 15.45 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.47 11.47 0 003.59.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.47 11.47 0 00.57 3.59 1 1 0 01-.25 1.01l-2.2 2.2z"/></svg>
+            07940 568877
+          </a>
+          <span class="tb-sep hidden lg:inline">|</span>
+        </div>
+        <!-- Main Content -->
+        <div class="tb-content">
+          <!-- Facebook -->
+          <a href="https://www.facebook.com/marshallandcohomeimprovements" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 hover:!text-[#e8b238] transition-colors duration-150 whitespace-nowrap">
+            <svg class="w-3.5 h-3.5 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
+            Follow Us
+          </a>
+          <span class="tb-sep hidden lg:inline">|</span>
+
+          <!-- Email -->
+          <a href="mailto:info@marshallandco.uk" class="flex items-center gap-1.5 hover:!text-[#e8b238] transition-colors duration-150 whitespace-nowrap">
+            <svg class="w-3.5 h-3.5 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            info@marshallandco.uk
+          </a>
+          <span class="tb-sep hidden lg:inline">|</span>
+
+          <!-- 5-Star Google Service -->
+          <span class="flex items-center gap-1.5 whitespace-nowrap">
+            <svg class="w-3.5 h-3.5 shrink-0 text-[#e8b238]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            5-Star Google Service
+          </span>
+          <span class="tb-sep hidden lg:inline">|</span>
+
+          <!-- Free Quotes -->
+          <span class="flex items-center gap-1.5 whitespace-nowrap">
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            Free Quotes
+          </span>
+          <span class="tb-sep hidden lg:inline">|</span>
+
+          <!-- Fully Insured -->
+          <span class="flex items-center gap-1.5 whitespace-nowrap">
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+            Fully Insured
+          </span>
+          <span class="tb-sep hidden lg:inline">|</span>
+
+          <!-- Opening Days/Time -->
+          <span class="flex items-center gap-1.5 whitespace-nowrap">
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            Mon-Sat 8am-6pm
+          </span>
+          <span class="tb-sep hidden lg:inline">|</span>
+
+          <!-- Phone -->
+          <a href="tel:07940568877" class="flex items-center gap-1.5 hover:!text-[#e8b238] transition-colors duration-150 whitespace-nowrap">
+            <svg class="w-3.5 h-3.5 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.45 15.45 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.47 11.47 0 003.59.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.47 11.47 0 00.57 3.59 1 1 0 01-.25 1.01l-2.2 2.2z"/></svg>
+            07940 568877
+          </a>
+          <span class="tb-sep hidden lg:inline">|</span>
+        </div>
+        <!-- Duplicated Content for Seamless Mobile Marquee -->
+        <div class="tb-content tb-content-dup" aria-hidden="true">
+          <a href="https://www.facebook.com/marshallandcohomeimprovements" tabindex="-1" class="flex items-center gap-1.5 whitespace-nowrap">
+            <svg class="w-3.5 h-3.5 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95z"/></svg>
+            Follow Us
+          </a>
+          <span class="tb-sep">|</span>
+          <a href="mailto:info@marshallandco.uk" tabindex="-1" class="flex items-center gap-1.5 whitespace-nowrap">
+            <svg class="w-3.5 h-3.5 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            info@marshallandco.uk
+          </a>
+          <span class="tb-sep">|</span>
+          <span class="flex items-center gap-1.5 whitespace-nowrap">
+            <svg class="w-3.5 h-3.5 shrink-0 text-[#e8b238]" fill="currentColor" viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+            5-Star Google Service
+          </span>
+          <span class="tb-sep">|</span>
+          <span class="flex items-center gap-1.5 whitespace-nowrap">
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            Free Quotes
+          </span>
+          <span class="tb-sep">|</span>
+          <span class="flex items-center gap-1.5 whitespace-nowrap">
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+            Fully Insured
+          </span>
+          <span class="tb-sep">|</span>
+          <span class="flex items-center gap-1.5 whitespace-nowrap">
+            <svg class="w-3.5 h-3.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            Mon-Sat 8am-6pm
+          </span>
+          <span class="tb-sep">|</span>
+          <a href="tel:07940568877" tabindex="-1" class="flex items-center gap-1.5 whitespace-nowrap">
+            <svg class="w-3.5 h-3.5 shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62 10.79a15.45 15.45 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24 11.47 11.47 0 003.59.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.47 11.47 0 00.57 3.59 1 1 0 01-.25 1.01l-2.2 2.2z"/></svg>
+            07940 568877
+          </a>
+          <span class="tb-sep">|</span>
+        </div>
+
+      </div>
+    </div>
+    <div id="header-container"
+        class="w-full max-w-[96rem] mx-auto px-4 sm:px-8 lg:px-12 py-4 md:py-5 flex justify-between items-center transition-all duration-500">
+
+        <a href="index.html" class="flex items-center logo-link transition-transform duration-200 hover:scale-110">
+            <img src="assets/imgs/logo.png" alt="Marshall & Co. Bespoke Home Improvements Logo"
+                class="logo-white w-[160px] md:w-[185px] lg:w-[215px] min-[1200px]:w-[200px] h-auto object-contain">
+        </a>
+
+                <nav class="hidden min-[1200px]:flex items-center gap-6 2xl:gap-10 font-body text-[15px] 2xl:text-[17px] font-semibold tracking-wide">
+            <div class="relative group/nav-services flex items-center">
+                <a href="pages/services.html" class="whitespace-nowrap nav-link flex items-center gap-1.5">
+                    Services 
+                    <svg class="w-4 h-4 transition-transform duration-200 group-hover/nav-services:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                </a>
+                <div class="absolute top-[100%] left-1/2 -translate-x-1/2 pt-1 opacity-0 invisible translate-y-2 group-hover/nav-services:opacity-100 group-hover/nav-services:visible group-hover/nav-services:translate-y-0 transition-all duration-300 z-50 pointer-events-none group-hover/nav-services:pointer-events-auto">
+                    <div class="bg-[#2c2c2c] border border-white/10 shadow-2xl rounded-xl py-3 px-3 flex flex-col w-[480px]">
+                        <div class="grid grid-cols-2 gap-x-2 gap-y-1">
+                        <a href="pages/service_pages/house-extensions.html" class="px-3 py-2 text-[15px] text-white/80 hover:!text-[#e8b238] hover:bg-white/5 rounded-lg transition-colors font-medium">House Extensions</a>
+                        <a href="pages/service_pages/home-renovations.html" class="px-3 py-2 text-[15px] text-white/80 hover:!text-[#e8b238] hover:bg-white/5 rounded-lg transition-colors font-medium">Home Renovations</a>
+                        <a href="pages/service_pages/loft-conversions.html" class="px-3 py-2 text-[15px] text-white/80 hover:!text-[#e8b238] hover:bg-white/5 rounded-lg transition-colors font-medium">Loft Conversions</a>
+                        <a href="pages/service_pages/kitchen-renovations.html" class="px-3 py-2 text-[15px] text-white/80 hover:!text-[#e8b238] hover:bg-white/5 rounded-lg transition-colors font-medium">Kitchen Renovations</a>
+                        <a href="pages/service_pages/bathroom-renovations.html" class="px-3 py-2 text-[15px] text-white/80 hover:!text-[#e8b238] hover:bg-white/5 rounded-lg transition-colors font-medium">Bathroom Renovations</a>
+                        <a href="pages/service_pages/garden-rooms.html" class="px-3 py-2 text-[15px] text-white/80 hover:!text-[#e8b238] hover:bg-white/5 rounded-lg transition-colors font-medium">Garden Rooms</a>
+                        <a href="pages/service_pages/garage-conversions.html" class="px-3 py-2 text-[15px] text-white/80 hover:!text-[#e8b238] hover:bg-white/5 rounded-lg transition-colors font-medium">Garage Conversions</a>
+                        <a href="pages/service_pages/decking.html" class="px-3 py-2 text-[15px] text-white/80 hover:!text-[#e8b238] hover:bg-white/5 rounded-lg transition-colors font-medium">Decking</a>
+                        <a href="pages/service_pages/windows-doors.html" class="px-3 py-2 text-[15px] text-white/80 hover:!text-[#e8b238] hover:bg-white/5 rounded-lg transition-colors font-medium">Windows & Doors</a>
+                        <a href="pages/service_pages/media-walls.html" class="px-3 py-2 text-[15px] text-white/80 hover:!text-[#e8b238] hover:bg-white/5 rounded-lg transition-colors font-medium">Media Walls</a>
+                        <a href="pages/service_pages/insurance-repairs.html" class="px-3 py-2 text-[15px] text-white/80 hover:!text-[#e8b238] hover:bg-white/5 rounded-lg transition-colors font-medium">Insurance Repairs</a>
+                        </div>
+                        <a href="pages/services.html" class="px-3 py-2.5 text-[14px] text-[#e8b238] hover:bg-white/5 rounded-lg transition-colors mt-2 border-t border-white/10 pt-3 font-bold uppercase tracking-wider text-center">View Service Hub &rarr;</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="relative group/nav-locations flex items-center">
+                <a href="pages/locations.html" class="whitespace-nowrap nav-link flex items-center gap-1.5">
+                    Where We Serve 
+                    <svg class="w-4 h-4 transition-transform duration-200 group-hover/nav-locations:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+                </a>
+                <div class="absolute top-[100%] left-1/2 -translate-x-1/2 pt-1 opacity-0 invisible translate-y-2 group-hover/nav-locations:opacity-100 group-hover/nav-locations:visible group-hover/nav-locations:translate-y-0 transition-all duration-300 z-50 pointer-events-none group-hover/nav-locations:pointer-events-auto">
+                    <div class="bg-[#2c2c2c] border border-white/10 shadow-2xl rounded-xl py-3 px-3 flex flex-col w-[480px]">
+                        <div class="grid grid-cols-2 gap-x-2 gap-y-1">
+                        <a href="pages/location_pages/perthshire.html" class="px-3 py-2 text-[15px] text-white/80 hover:!text-[#e8b238] hover:bg-white/5 rounded-lg transition-colors font-medium">Perthshire</a>
+                        <a href="pages/location_pages/perth.html" class="px-3 py-2 text-[15px] text-white/80 hover:!text-[#e8b238] hover:bg-white/5 rounded-lg transition-colors font-medium">Perth</a>
+                        <a href="pages/location_pages/dundee.html" class="px-3 py-2 text-[15px] text-white/80 hover:!text-[#e8b238] hover:bg-white/5 rounded-lg transition-colors font-medium">Dundee</a>
+                        <a href="pages/location_pages/scone.html" class="px-3 py-2 text-[15px] text-white/80 hover:!text-[#e8b238] hover:bg-white/5 rounded-lg transition-colors font-medium">Scone</a>
+                        <a href="pages/location_pages/kinross.html" class="px-3 py-2 text-[15px] text-white/80 hover:!text-[#e8b238] hover:bg-white/5 rounded-lg transition-colors font-medium">Kinross</a>
+                        <a href="pages/location_pages/blairgowrie.html" class="px-3 py-2 text-[15px] text-white/80 hover:!text-[#e8b238] hover:bg-white/5 rounded-lg transition-colors font-medium">Blairgowrie</a>
+                        <a href="pages/location_pages/crieff.html" class="px-3 py-2 text-[15px] text-white/80 hover:!text-[#e8b238] hover:bg-white/5 rounded-lg transition-colors font-medium">Crieff</a>
+                        <a href="pages/location_pages/auchterarder.html" class="px-3 py-2 text-[15px] text-white/80 hover:!text-[#e8b238] hover:bg-white/5 rounded-lg transition-colors font-medium">Auchterarder</a>
+                        <a href="pages/location_pages/bridge-of-earn.html" class="px-3 py-2 text-[15px] text-white/80 hover:!text-[#e8b238] hover:bg-white/5 rounded-lg transition-colors font-medium">Bridge of Earn</a>
+                        <a href="pages/location_pages/coupar-angus.html" class="px-3 py-2 text-[15px] text-white/80 hover:!text-[#e8b238] hover:bg-white/5 rounded-lg transition-colors font-medium">Coupar Angus</a>
+                        <a href="pages/location_pages/abernethy.html" class="px-3 py-2 text-[15px] text-white/80 hover:!text-[#e8b238] hover:bg-white/5 rounded-lg transition-colors font-medium">Abernethy</a>
+                        <a href="pages/location_pages/almondbank.html" class="px-3 py-2 text-[15px] text-white/80 hover:!text-[#e8b238] hover:bg-white/5 rounded-lg transition-colors font-medium">Almondbank</a>
+                        <a href="pages/location_pages/alyth.html" class="px-3 py-2 text-[15px] text-white/80 hover:!text-[#e8b238] hover:bg-white/5 rounded-lg transition-colors font-medium">Alyth</a>
+                        <a href="pages/location_pages/bankfoot.html" class="px-3 py-2 text-[15px] text-white/80 hover:!text-[#e8b238] hover:bg-white/5 rounded-lg transition-colors font-medium">Bankfoot</a>
+                        <a href="pages/location_pages/comrie.html" class="px-3 py-2 text-[15px] text-white/80 hover:!text-[#e8b238] hover:bg-white/5 rounded-lg transition-colors font-medium">Comrie</a>
+                        <a href="pages/location_pages/dunblane.html" class="px-3 py-2 text-[15px] text-white/80 hover:!text-[#e8b238] hover:bg-white/5 rounded-lg transition-colors font-medium">Dunblane</a>
+                        <a href="pages/location_pages/dunkeld.html" class="px-3 py-2 text-[15px] text-white/80 hover:!text-[#e8b238] hover:bg-white/5 rounded-lg transition-colors font-medium">Dunkeld</a>
+                        <a href="pages/location_pages/errol.html" class="px-3 py-2 text-[15px] text-white/80 hover:!text-[#e8b238] hover:bg-white/5 rounded-lg transition-colors font-medium">Errol</a>
+                        <a href="pages/location_pages/inchture.html" class="px-3 py-2 text-[15px] text-white/80 hover:!text-[#e8b238] hover:bg-white/5 rounded-lg transition-colors font-medium">Inchture</a>
+                        <a href="pages/location_pages/luncarty.html" class="px-3 py-2 text-[15px] text-white/80 hover:!text-[#e8b238] hover:bg-white/5 rounded-lg transition-colors font-medium">Luncarty</a>
+                        <a href="pages/location_pages/methven.html" class="px-3 py-2 text-[15px] text-white/80 hover:!text-[#e8b238] hover:bg-white/5 rounded-lg transition-colors font-medium">Methven</a>
+                        <a href="pages/location_pages/milnathort.html" class="px-3 py-2 text-[15px] text-white/80 hover:!text-[#e8b238] hover:bg-white/5 rounded-lg transition-colors font-medium">Milnathort</a>
+                        <a href="pages/location_pages/stanley.html" class="px-3 py-2 text-[15px] text-white/80 hover:!text-[#e8b238] hover:bg-white/5 rounded-lg transition-colors font-medium">Stanley</a>
+                        </div>
+                        <a href="pages/locations.html" class="px-3 py-2.5 text-[14px] text-[#e8b238] hover:bg-white/5 rounded-lg transition-colors mt-2 border-t border-white/10 pt-3 font-bold uppercase tracking-wider text-center col-span-2">View Location Hub &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+            <a href="pages/about.html" class="whitespace-nowrap nav-link flex items-center">About Us</a>
+            <a href="pages/gallery.html" class="whitespace-nowrap nav-link flex items-center">Gallery</a>
+            <a href="index.html#faq" class="whitespace-nowrap nav-link flex items-center">FAQs</a>
+            <a href="pages/testimonials.html" class="whitespace-nowrap nav-link flex items-center">Testimonials</a>
+            <span class="w-px h-[18px] bg-white/30 my-auto"></span>
+            <a href="pages/contact.html" class="whitespace-nowrap nav-link flex items-center">Get in Touch</a>
+        </nav>
+
+        <button id="menuBtn" aria-expanded="false" aria-controls="mobileNav"
+            class="min-[1200px]:hidden text-white focus:outline-none p-2 -mr-2 transition-colors duration-150"
+            aria-label="Toggle Mobile Menu">
+            <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                </path>
+            </svg>
+        </button>
+    </div>
+
+<div id="mobileNav"
+        class="xl:hidden absolute top-full left-0 w-full px-4 pt-2 pb-6 transition-all duration-200 ease-out opacity-0 invisible -translate-y-4 pointer-events-none" style="max-height: calc(100vh - 80px); overflow-y: auto; -webkit-overflow-scrolling: touch;">
+        <div
+            class="bg-[#303030]/95 backdrop-blur-xl border border-white/10 shadow-2xl rounded-2xl">
+            <div class="flex flex-col px-6 py-6 space-y-4 text-center font-body text-white">
+                <a href="pages/about.html" class="block py-2 text-lg font-medium hover:!text-[#e8b238] transition-colors duration-150">About Us</a>
+                
+                                <details class="group/mob-serv">
+                    <summary class="relative flex items-center justify-center py-2 text-lg font-medium hover:!text-[#e8b238] transition-colors duration-150 cursor-pointer list-none w-full">
+                        <span>Services</span>
+                        <svg class="absolute right-2 w-5 h-5 transition-transform duration-200 group-open/mob-serv:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="bg-white/5 rounded-xl mt-1 p-3 text-[14px] text-white/80 border border-white/5">
+                        <a href="pages/services.html" class="block text-center hover:!text-[#e8b238] font-semibold text-white py-2 mb-2 border-b border-white/10">All Services</a>
+                        <div class="grid grid-cols-2 gap-x-2 gap-y-1">
+                        <a href="pages/service_pages/house-extensions.html" class="hover:!text-[#e8b238] py-1 truncate">House Extensions</a>
+                        <a href="pages/service_pages/home-renovations.html" class="hover:!text-[#e8b238] py-1 truncate">Home Renovations</a>
+                        <a href="pages/service_pages/loft-conversions.html" class="hover:!text-[#e8b238] py-1 truncate">Loft Conversions</a>
+                        <a href="pages/service_pages/kitchen-renovations.html" class="hover:!text-[#e8b238] py-1 truncate">Kitchen Renovations</a>
+                        <a href="pages/service_pages/bathroom-renovations.html" class="hover:!text-[#e8b238] py-1 truncate">Bathroom Renovations</a>
+                        <a href="pages/service_pages/garden-rooms.html" class="hover:!text-[#e8b238] py-1 truncate">Garden Rooms</a>
+                        <a href="pages/service_pages/garage-conversions.html" class="hover:!text-[#e8b238] py-1 truncate">Garage Conversions</a>
+                        <a href="pages/service_pages/decking.html" class="hover:!text-[#e8b238] py-1 truncate">Decking</a>
+                        <a href="pages/service_pages/windows-doors.html" class="hover:!text-[#e8b238] py-1 truncate">Windows & Doors</a>
+                        <a href="pages/service_pages/media-walls.html" class="hover:!text-[#e8b238] py-1 truncate">Media Walls</a>
+                        <a href="pages/service_pages/insurance-repairs.html" class="hover:!text-[#e8b238] py-1 truncate">Insurance Repairs</a>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="group/mob-loc">
+                    <summary class="relative flex items-center justify-center py-2 text-lg font-medium hover:!text-[#e8b238] transition-colors duration-150 cursor-pointer list-none w-full">
+                        <span>Where We Serve</span>
+                        <svg class="absolute right-2 w-5 h-5 transition-transform duration-200 group-open/mob-loc:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </summary>
+                    <div class="bg-white/5 rounded-xl mt-1 p-3 text-[14px] text-white/80 border border-white/5">
+                        <a href="pages/locations.html" class="block text-center hover:!text-[#e8b238] font-semibold text-white py-2 mb-2 border-b border-white/10">All Locations</a>
+                        <div class="grid grid-cols-2 gap-x-2 gap-y-1">
+                        <a href="pages/location_pages/perthshire.html" class="hover:!text-[#e8b238] py-1 truncate">Perthshire</a>
+                        <a href="pages/location_pages/perth.html" class="hover:!text-[#e8b238] py-1 truncate">Perth</a>
+                        <a href="pages/location_pages/dundee.html" class="hover:!text-[#e8b238] py-1 truncate">Dundee</a>
+                        <a href="pages/location_pages/scone.html" class="hover:!text-[#e8b238] py-1 truncate">Scone</a>
+                        <a href="pages/location_pages/kinross.html" class="hover:!text-[#e8b238] py-1 truncate">Kinross</a>
+                        <a href="pages/location_pages/blairgowrie.html" class="hover:!text-[#e8b238] py-1 truncate">Blairgowrie</a>
+                        <a href="pages/location_pages/crieff.html" class="hover:!text-[#e8b238] py-1 truncate">Crieff</a>
+                        <a href="pages/location_pages/auchterarder.html" class="hover:!text-[#e8b238] py-1 truncate">Auchterarder</a>
+                        <a href="pages/location_pages/bridge-of-earn.html" class="hover:!text-[#e8b238] py-1 truncate">Bridge of Earn</a>
+                        <a href="pages/location_pages/coupar-angus.html" class="hover:!text-[#e8b238] py-1 truncate">Coupar Angus</a>
+                        <a href="pages/location_pages/abernethy.html" class="hover:!text-[#e8b238] py-1 truncate">Abernethy</a>
+                        <a href="pages/location_pages/almondbank.html" class="hover:!text-[#e8b238] py-1 truncate">Almondbank</a>
+                        <a href="pages/location_pages/alyth.html" class="hover:!text-[#e8b238] py-1 truncate">Alyth</a>
+                        <a href="pages/location_pages/bankfoot.html" class="hover:!text-[#e8b238] py-1 truncate">Bankfoot</a>
+                        <a href="pages/location_pages/comrie.html" class="hover:!text-[#e8b238] py-1 truncate">Comrie</a>
+                        <a href="pages/location_pages/dunblane.html" class="hover:!text-[#e8b238] py-1 truncate">Dunblane</a>
+                        <a href="pages/location_pages/dunkeld.html" class="hover:!text-[#e8b238] py-1 truncate">Dunkeld</a>
+                        <a href="pages/location_pages/errol.html" class="hover:!text-[#e8b238] py-1 truncate">Errol</a>
+                        <a href="pages/location_pages/inchture.html" class="hover:!text-[#e8b238] py-1 truncate">Inchture</a>
+                        <a href="pages/location_pages/luncarty.html" class="hover:!text-[#e8b238] py-1 truncate">Luncarty</a>
+                        <a href="pages/location_pages/methven.html" class="hover:!text-[#e8b238] py-1 truncate">Methven</a>
+                        <a href="pages/location_pages/milnathort.html" class="hover:!text-[#e8b238] py-1 truncate">Milnathort</a>
+                        <a href="pages/location_pages/stanley.html" class="hover:!text-[#e8b238] py-1 truncate">Stanley</a>
+                        </div>
+                    </div>
+                </details>
+
+                <a href="pages/gallery.html" class="block py-2 text-lg font-medium hover:!text-[#e8b238] transition-colors duration-150">Gallery</a>
+                <a href="index.html#faq" class="block py-2 text-lg font-medium hover:!text-[#e8b238] transition-colors duration-150">FAQs</a>
+                <a href="pages/testimonials.html" class="block py-2 text-lg font-medium hover:!text-[#e8b238] transition-colors duration-150">Testimonials</a>
+                <a href="tel:07940568877"
+                    class="block py-2 text-lg font-medium text-[#e8b238] hover:text-white transition-colors duration-150">Call Now</a>
+                <div class="pt-6 mt-2 border-t border-white/10">
+                    <a href="pages/contact.html"
+                        class="inline-block w-full px-8 py-3.5 bg-[#e8b238] text-[#303030] font-bold rounded-xl hover:bg-white transition-colors duration-150">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+      (function () {
+        var page = location.pathname.split('/').pop().replace(/\.html$/, '') || 'index';
+        var map = {
+          'index': 'About Us',
+          'gallery': 'Gallery',
+          'contact': 'Contact',
+          'faqs': 'FAQs',
+          'services': 'Services'
+        };
+        var activeLabel = map[page];
+        if (!activeLabel) return;
+        document.querySelectorAll('.nav-link').forEach(function (el) {
+          if (el.textContent.trim() === activeLabel) el.classList.add('nav-active');
+        });
+      })();
+    </script>
+</header>
