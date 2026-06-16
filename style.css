@@ -637,6 +637,10 @@ span.pill-dark-bg:hover {
 }
 @media (hover: hover) { .masonry-item:hover img { transform: scale(1.06); --img-saturate: 1.5; } }
 
+@media (max-width: 767px) {
+  .eyebrow-chapter { font-weight: 600 !important; }
+}
+
 .masonry-overlay {
     position: absolute; inset: 0;
     background: linear-gradient(to top, rgba(48, 48, 48, 0.88) 0%, transparent 55%);
