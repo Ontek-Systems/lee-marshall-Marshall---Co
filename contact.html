@@ -496,25 +496,28 @@
           });
           L.marker([56.3962, -3.4314], { icon: pinIcon }).addTo(map);
 
-          // Fetch Perth & Kinross (Perthshire) boundary from Nominatim
-          fetch('https://nominatim.openstreetmap.org/search?q=Perth+and+Kinross&polygon_geojson=1&format=json&limit=1', {
-            headers: { 'Accept-Language': 'en' }
-          })
-          .then(function(r){ return r.json(); })
-          .then(function(data){
-            if (!data || !data[0] || !data[0].geojson) return;
-            L.geoJSON(data[0].geojson, {
-              style: {
-                color: '#e8b238',
-                weight: 2.5,
-                opacity: 0.85,
-                fill: true,
-                fillColor: '#e8b238',
-                fillOpacity: 0.08
-              }
-            }).addTo(map);
-          })
-          .catch(function(){});
+          // Hardcoded service area polygon (clockwise from NW)
+          var serviceArea = [
+            [56.371, -3.994], // Comrie
+            [56.188, -3.965], // Dunblane
+            [56.207, -3.430], // Kinross / Milnathort
+            [56.333, -3.310], // Abernethy
+            [56.362, -3.212], // Errol
+            [56.421, -3.142], // Inchture
+            [56.462, -2.971], // Dundee
+            [56.624, -3.228], // Alyth
+            [56.588, -3.338], // Blairgowrie
+            [56.566, -3.589], // Dunkeld
+            [56.373, -3.839], // Crieff
+          ];
+          L.polygon(serviceArea, {
+            color: '#e8b238',
+            weight: 2.5,
+            opacity: 0.9,
+            fill: true,
+            fillColor: '#e8b238',
+            fillOpacity: 0.10
+          }).addTo(map);
         })();
         </script>
 
