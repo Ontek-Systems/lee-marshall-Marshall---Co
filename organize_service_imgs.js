@@ -69,7 +69,7 @@ for (const [folder, prefix] of Object.entries(FOLDER_MAP)) {
     .sort();
 
   if (files.length === 0) {
-    console.log(`${folder}/  — no images (skipped)`);
+    console.log(`${folder}/  - no images (skipped)`);
     continue;
   }
 

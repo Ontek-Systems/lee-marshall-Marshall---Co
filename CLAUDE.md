@@ -4,7 +4,7 @@
 
 Talk to me like a normal person. I'll describe what I want in plain English. Just do it.
 
-If I say "make another page," make another page — files, structure, whatever it takes. If I say "make this button blue," just change the colour. Match your effort to what I'm actually asking for.
+If I say "make another page," make another page - files, structure, whatever it takes. If I say "make this button blue," just change the colour. Match your effort to what I'm actually asking for.
 
 ## Speed and focus
 
@@ -16,7 +16,7 @@ If I say "make another page," make another page — files, structure, whatever i
 ## Finding things
 
 - If I name a section, class, file, or ID, go straight there. Don't run a bunch of greps first.
-- If you genuinely can't find what I mean, ask me — don't search blindly.
+- If you genuinely can't find what I mean, ask me - don't search blindly.
 
 ## Output
 
@@ -30,13 +30,23 @@ If I say "make another page," make another page — files, structure, whatever i
 - Ask, don't assume.
 - Stop, don't ramble.
 
-## CSS specificity — Tailwind v4 browser edition
+## CSS specificity - Tailwind v4 (pre-built static stylesheet)
 
-This project uses `@tailwindcss/browser@4` loaded via CDN. Tailwind v4 processes styles at runtime and its cascade beats `<style>` block rules. The only reliable way to override font-size, spacing, or colour on a specific element is to put `style="property: value !important"` directly on the HTML element. Never rely on class-based arbitrary values (e.g. `text-[7px]`) or `<style>` block rules for targeted overrides — they will be ignored.
+This project uses Tailwind v4 compiled to a static file, `tailwind.css`, which is linked **after** `style.css` on every page (so Tailwind utilities still win ties over `style.css` block rules, exactly as the old runtime CDN did). The only reliable way to override font-size, spacing, or colour on a specific element is to put `style="property: value !important"` directly on the HTML element. Never rely on class-based arbitrary values (e.g. `text-[7px]`) or `<style>` block rules for targeted overrides - they will be ignored.
 
-## Typography system — how to edit text size, weight, spacing
+### Rebuilding tailwind.css
+`tailwind.css` is generated, not hand-edited. After adding markup with new utility classes, new brand-colour utilities, or new classes added by JavaScript, rebuild it:
 
-All font size, weight, and line-height for the whole site is controlled by CSS variables at the top of `style.css`, inside the `:root` block. **Edit those variables only — never scatter font-size or font-weight in individual elements or media queries.**
+```
+npm install        # first time only
+npm run build:css  # regenerates tailwind.css (minified)
+```
+
+Build config lives in `tailwind.input.css` (brand `@theme` tokens + `@source` globs). `global.js` is listed as a `@source` because it adds classes at runtime that appear nowhere in the HTML. The built `tailwind.css` is committed and served statically by Cloudflare Pages (no build step on the host). Do not re-add the `@tailwindcss/browser` CDN script.
+
+## Typography system - how to edit text size, weight, spacing
+
+All font size, weight, and line-height for the whole site is controlled by CSS variables at the top of `style.css`, inside the `:root` block. **Edit those variables only - never scatter font-size or font-weight in individual elements or media queries.**
 
 ### The variables (top of style.css `:root`):
 ```
@@ -48,33 +58,33 @@ All font size, weight, and line-height for the whole site is controlled by CSS v
 ```
 
 ### The classes to use in HTML:
-- `.t-hero-heading` — hero h1/h2
-- `.t-hero-body` — hero subtitle paragraphs
-- `.t-section-heading` — section h2s
-- `.t-section-body` — section body paragraphs
-- `.t-label` — eyebrow/tagline text (uppercase small caps)
+- `.t-hero-heading` - hero h1/h2
+- `.t-hero-body` - hero subtitle paragraphs
+- `.t-section-heading` - section h2s
+- `.t-section-body` - section body paragraphs
+- `.t-label` - eyebrow/tagline text (uppercase small caps)
 
 ### Rules:
 - **Site-wide change** (e.g. "make all body text bigger"): edit the relevant `--section-body-size` variable in `style.css`. One line, done.
 - **Hero only** (e.g. "make hero headings bolder"): edit `--hero-heading-weight`. One line.
 - **Single section only** (e.g. "make this section's heading smaller"): override inline on that element only, with a comment explaining why.
-- **UI component headings** (gallery cards, process cards, stat numbers, badges — anything that is a widget, not page content): set `font-size: Xrem !important` directly in the component's own `<style>` block. These must never inherit from the global heading scale.
-- **Never** add `font-size`, `font-weight`, or `line-height` to individual elements unless I specifically say to target one section. No Tailwind font-size classes (`text-xl`, `text-2xl`, etc.) on headings or body copy — use the system classes instead.
+- **UI component headings** (gallery cards, process cards, stat numbers, badges - anything that is a widget, not page content): set `font-size: Xrem !important` directly in the component's own `<style>` block. These must never inherit from the global heading scale.
+- **Never** add `font-size`, `font-weight`, or `line-height` to individual elements unless I specifically say to target one section. No Tailwind font-size classes (`text-xl`, `text-2xl`, etc.) on headings or body copy - use the system classes instead.
 - **Changing the font**: update the font name in `fonts.css` (@font-face + `:root --site-font`) AND in `style.css` (the four `font-family` lines for `body`, `h1-h6`, `.font-heading`, `.font-body`). Do both simultaneously.
 
 ### Design tokens (colours, dark mode):
-- `gs-tagline` — eyebrow text colour token
-- `gs-heading` — heading colour token
-- `gs-body` — body text colour token  
-- `gs-stat-label` — stat labels
-- `btn-adaptive` — buttons (adapts light/dark)
-- `section-dark` — add to a `<section>` to flip it to dark mode
+- `gs-tagline` - eyebrow text colour token
+- `gs-heading` - heading colour token
+- `gs-body` - body text colour token  
+- `gs-stat-label` - stat labels
+- `btn-adaptive` - buttons (adapts light/dark)
+- `section-dark` - add to a `<section>` to flip it to dark mode
 
 Use these tokens for new sections. Don't hardcode colours.
 
 ## Tech stack
 
-Static HTML, Tailwind CSS, vanilla JavaScript. No React, no frameworks, no build steps. Python files in the root are one-off scripts — ignore them unless I ask.
+Static HTML, Tailwind CSS, vanilla JavaScript. No React, no frameworks, no build steps. Python files in the root are one-off scripts - ignore them unless I ask.
 
 ## Context efficiency
 
@@ -166,12 +176,12 @@ When I say **"standardize the sizing"** on a section, match the tagline/title/su
 - Font size: `1.1rem` (inline `style="font-size:1.1rem !important;"`)
 - Font weight: 400
 - Line height: `leading-relaxed`
-- Color: `rgba(255,255,255,0.78)` on dark sections, `rgba(48,48,48,0.80)` on light sections — never solid `#303030`, never `var(--gs-body)`
+- Color: `rgba(255,255,255,0.78)` on dark sections, `rgba(48,48,48,0.80)` on light sections - never solid `#303030`, never `var(--gs-body)`
 - Class: `font-body`
 
 **Spacing summary:** tagline → `1.5rem` gap → title → `1.25rem` gap → subtitle
 
-Apply these exact values — no deviating to "similar" sizes. If the section is light-mode, swap white/faded-white colours for the appropriate `gs-` token equivalents.
+Apply these exact values - no deviating to "similar" sizes. If the section is light-mode, swap white/faded-white colours for the appropriate `gs-` token equivalents.
 
 ## "Standardize the text content" command
 
@@ -183,7 +193,7 @@ When I say **"standardize the text content"** and name a specific section or ele
 - Colour
 - Margin/padding (top, bottom, gap between elements)
 
-Then apply every one of those exact values to the target I name. Do not approximate, do not use "similar" classes — copy the source values precisely as inline styles if needed to guarantee they aren't overridden by Tailwind.
+Then apply every one of those exact values to the target I name. Do not approximate, do not use "similar" classes - copy the source values precisely as inline styles if needed to guarantee they aren't overridden by Tailwind.
 
 ### Font & word-mask fix (always apply on non-index pages)
 
@@ -191,7 +201,7 @@ When standardizing text content on any page other than `index.html`, also check 
 
 1. **Font**: Remove any Google Fonts (Montserrat, etc.) imports and `--font-heading`/`--font-body` overrides in `@theme`. Add `<link rel="stylesheet" href="../fonts.css">` (adjust path depth as needed) so Satoshi is used everywhere.
 
-2. **Word-mask descender clipping**: The `.word-mask` definition must use `clip-path` — NOT `overflow: hidden` — to prevent font descenders being cut off. The correct definition is:
+2. **Word-mask descender clipping**: The `.word-mask` definition must use `clip-path` - NOT `overflow: hidden` - to prevent font descenders being cut off. The correct definition is:
 ```css
 .word-mask { display: inline-block; vertical-align: bottom; clip-path: inset(-80% -20% 0% -20%); padding-bottom: 0.25em; margin-bottom: -0.25em; }
 .word-mask-inner { display: inline-block; transform: translateY(110%); transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); will-change: transform; }
@@ -208,7 +218,7 @@ Replace any `overflow: hidden` version with this.
 
 ## Brand Guidelines & Vibe
   - **Primary font:** Currently **Satoshi** (self-hosted variable font in `assets/fonts/Satoshi/`). Used for all headings and body text site-wide via `--site-font` in `style.css`. To change the font, see "Typography system" section above.
-  - **Accent/script font:** **Elicit Script** — self-hosted `assets/fonts/ElicitScript-SemiBold.otf`. Used ONLY for the Lee Marshall signature. Never apply to body text or headings.
+  - **Accent/script font:** **Elicit Script** - self-hosted `assets/fonts/ElicitScript-SemiBold.otf`. Used ONLY for the Lee Marshall signature. Never apply to body text or headings.
   - **Overall Vibe:** Luxury, Premium, Bespoke, High-end Craftsmanship.
 
 - **Color Scheme Palette:** (Apply these using Tailwind arbitrary values, e.g., `bg-[#fff9eb]`, `text-[#e8b238]`, or map them to custom CSS variables in style.css):
@@ -223,32 +233,32 @@ Replace any `overflow: hidden` version with this.
 
 ```
 marshall-and-co-bespoke-home-improvements/
-├── index.html                  — Homepage (~1891 lines)
-├── style.css                   — Global styles, gs- token system, animations (~638 lines)
-├── global.js                   — Component loader, scroll reveal, header scroll, nav (~194 lines)
-├── CLAUDE.md                   — Project rules & context
+├── index.html                  - Homepage (~1891 lines)
+├── style.css                   - Global styles, gs- token system, animations (~638 lines)
+├── global.js                   - Component loader, scroll reveal, header scroll, nav (~194 lines)
+├── CLAUDE.md                   - Project rules & context
 │
 ├── components/
-│   ├── header.html             — Fixed nav: top info banner + logo + links + mobile menu
-│   └── footer.html             — Brand, contact details, quick links, copyright
+│   ├── header.html             - Fixed nav: top info banner + logo + links + mobile menu
+│   └── footer.html             - Brand, contact details, quick links, copyright
 │
 ├── assets/
 │   ├── fonts/
-│   │   ├── ElicitScript-SemiBold.otf   — Accent/script font (kickers, signature)
-│   │   └── Cormorant/                  — Heading font (Regular, RegularItalic, Semi, Bold, BoldItalic + subfamilies)
+│   │   ├── ElicitScript-SemiBold.otf   - Accent/script font (kickers, signature)
+│   │   └── Cormorant/                  - Heading font (Regular, RegularItalic, Semi, Bold, BoldItalic + subfamilies)
 │   └── imgs/
-│       ├── logo.png                    — Company logo
-│       ├── qrcode.png                  — Google review QR code
-│       ├── og-image.jpg                — Open Graph / social share image
-│       ├── all_imgs/                   — 109 raw client WhatsApp photos (source material)
-│       ├── general_imgs/               — about.jpg, about_bg.jpg, before.jpg, after.jpg
-│       ├── hero_imgs/                  — hero1.jpg, hero2.jpg, hero3.jpg
-│       ├── location_imgs/              — Empty (future location pages)
-│       └── service_imgs/               — service1.jpg – service4.jpg
+│       ├── logo.png                    - Company logo
+│       ├── qrcode.png                  - Google review QR code
+│       ├── og-image.jpg                - Open Graph / social share image
+│       ├── all_imgs/                   - 109 raw client WhatsApp photos (source material)
+│       ├── general_imgs/               - about.jpg, about_bg.jpg, before.jpg, after.jpg
+│       ├── hero_imgs/                  - hero1.jpg, hero2.jpg, hero3.jpg
+│       ├── location_imgs/              - Empty (future location pages)
+│       └── service_imgs/               - service1.jpg – service4.jpg
 │
 └── pages/
-    ├── location_pages/         — Empty (future location landing pages)
-    └── service_pages/          — Empty (future service detail pages)
+    ├── location_pages/         - Empty (future location landing pages)
+    └── service_pages/          - Empty (future service detail pages)
 ```
 
 ### Token System (style.css CSS custom properties)
@@ -269,19 +279,19 @@ See the "Typography system" section above. All sizes/weights are CSS variables i
 
 ### Current Homepage Sections (index.html)
 
-1. **Hero** — 3-slide content carousel (lerp-free CSS transitions). Slides: Welcome / Craftsmanship / Conversion (form). Background images cycle independently. Animated mouse scroll indicator + slide dots. Timer stops permanently on slide 3 or form focus.
-2. **Trust Banner** — scrolling ticker of service keywords (marquee animation)
-3. **About** — parallax background image, two-column text + floating portrait image (desktop), stat counters (20+ years, 5-Star, 100% personally led), Lee Marshall script signature with underline
-4. **Gallery** (`#gallery-snippet`) — sticky lerp-scroll card carousel, mirrors Process section layout. Dark bg, fade gradients, dots, "View Full Gallery" button. Cards reference `all_imgs/` WhatsApp photos.
-5. **Services** (`#services-section`) — 4 alternating full-width rows (image + text), parallax on images, section number 03, sub-cards numbered 01–04 internally
-6. **Inspiration** (`#inspiration-banner-section`) — full-bleed bg image with parallax, frosted glass card anchored right, section number 04
-7. **Process** (`#process-section`) — sticky card stack ("How We Work"), 4 cards reveal on scroll, lerp JS, dots, "Scroll to explore" hint anchored at bottom. Section number 05.
-8. **Testimonials** (`#testimonials`) — review cards + Google QR code CTA. Section number 06/07.
-9. **FAQ** (`#faq`) — native `<details>` accordion, Schema.org FAQ markup. Section number 08.
-10. **Footer** — injected via component
+1. **Hero** - 3-slide content carousel (lerp-free CSS transitions). Slides: Welcome / Craftsmanship / Conversion (form). Background images cycle independently. Animated mouse scroll indicator + slide dots. Timer stops permanently on slide 3 or form focus.
+2. **Trust Banner** - scrolling ticker of service keywords (marquee animation)
+3. **About** - parallax background image, two-column text + floating portrait image (desktop), stat counters (20+ years, 5-Star, 100% personally led), Lee Marshall script signature with underline
+4. **Gallery** (`#gallery-snippet`) - sticky lerp-scroll card carousel, mirrors Process section layout. Dark bg, fade gradients, dots, "View Full Gallery" button. Cards reference `all_imgs/` WhatsApp photos.
+5. **Services** (`#services-section`) - 4 alternating full-width rows (image + text), parallax on images, section number 03, sub-cards numbered 01–04 internally
+6. **Inspiration** (`#inspiration-banner-section`) - full-bleed bg image with parallax, frosted glass card anchored right, section number 04
+7. **Process** (`#process-section`) - sticky card stack ("How We Work"), 4 cards reveal on scroll, lerp JS, dots, "Scroll to explore" hint anchored at bottom. Section number 05.
+8. **Testimonials** (`#testimonials`) - review cards + Google QR code CTA. Section number 06/07.
+9. **FAQ** (`#faq`) - native `<details>` accordion, Schema.org FAQ markup. Section number 08.
+10. **Footer** - injected via component
 
 ### Known Outstanding Issues
 
-- **Before/After slider JS exists** (`ba-slider`) but the HTML section was never built — dead code at bottom of file
-- **Unused Cormorant subfamilies** still in `assets/fonts/Cormorant/` (CormorantInfant, CormorantSC, CormorantUnicase, CormorantUpright + undeclared weights) — ~25 files, ~3.5MB unused
-- **Gallery scroll-wrapper height hardcoded** — `style="height: 420vh;"` inline on `#gallery-scroll-wrapper`
+- **Before/After slider JS exists** (`ba-slider`) but the HTML section was never built - dead code at bottom of file
+- **Unused Cormorant subfamilies** still in `assets/fonts/Cormorant/` (CormorantInfant, CormorantSC, CormorantUnicase, CormorantUpright + undeclared weights) - ~25 files, ~3.5MB unused
+- **Gallery scroll-wrapper height hardcoded** - `style="height: 420vh;"` inline on `#gallery-scroll-wrapper`

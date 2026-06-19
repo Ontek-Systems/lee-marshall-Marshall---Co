@@ -1,7 +1,7 @@
 /* ============================================================
-   FONT CONTROL — TO CHANGE THE FONT, TELL CLAUDE THE FONT NAME.
+   FONT CONTROL - TO CHANGE THE FONT, TELL CLAUDE THE FONT NAME.
    Claude updates: (1) the @font-face below, (2) style.css body/h1/h2.../font-heading/font-body rules.
-   DO NOT use CSS variables — Tailwind @theme swallows them.
+   DO NOT use CSS variables - Tailwind @theme swallows them.
    1. Uncomment the @font-face block for your chosen font below
    2. Update the font name in the THREE --font-heading lines:
       - Line ~60 in this file (:root block)

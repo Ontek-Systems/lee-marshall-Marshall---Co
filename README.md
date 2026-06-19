@@ -1,4 +1,4 @@
-# Demo Template — Local Service Business (2-Page)
+# Demo Template - Local Service Business (2-Page)
 ## Quick-deploy demo for client pitches
 
 ---
@@ -34,13 +34,13 @@ demo-template/
 
 ## How to Start a New Demo
 
-### Step 1 — Drop in the assets
+### Step 1 - Drop in the assets
 - Add `logo-white.png` and `logo-dark.png` to `assets/imgs/`
 - Add `hero.mp4` to `assets/video/` (or swap video for `<img>` in hero)
 - Add service photos as `service-1.jpg`, `service-2.jpg`, etc.
 - Add 3 slideshow images as `slide-1.jpg`, `slide-2.jpg`, `slide-3.jpg`
 
-### Step 2 — Update Brand Config (2 minutes)
+### Step 2 - Update Brand Config (2 minutes)
 In **both** `index.html` and `contact.html`, find the `@theme` block and update:
 
 ```css
@@ -57,7 +57,7 @@ In **both** `index.html` and `contact.html`, find the `@theme` block and update:
 
 Also update the Google Fonts `<link>` href to use your chosen fonts.
 
-### Step 3 — Search and Replace (5 minutes)
+### Step 3 - Search and Replace (5 minutes)
 Use your editor's Find & Replace. Search `REPLACE` to find every marker.
 
 | Placeholder           | Replace with                          |
@@ -72,12 +72,12 @@ Use your editor's Find & Replace. Search `REPLACE` to find every marker.
 | `AGENCY NAME`         | Your agency name                      |
 | `YOUR_SCRIPT_ID`      | Google Apps Script deployment ID      |
 
-### Step 4 — Paste Components
+### Step 4 - Paste Components
 - Copy everything between the `═══ COPY FROM HERE` markers in `components/header.html`
   and paste it where `[PASTE HEADER COMPONENT HERE]` appears in each page.
 - Do the same for `components/footer.html`.
 
-### Step 5 — Fill in content
+### Step 5 - Fill in content
 Replace all remaining `REPLACE` comments with real client content:
 - Headlines, sub-copy, service names + descriptions
 - Trust badge labels (6 items for the marquee)
@@ -104,7 +104,7 @@ Replace all remaining `REPLACE` comments with real client content:
 - All links mirror the header nav
 
 ### Forms
-- **Honeypot**: hidden field catches bots — never remove it
+- **Honeypot**: hidden field catches bots - never remove it
 - **GDPR checkbox**: required before submit
 - **Rate limiting**: max 3 submissions per browser session
 - **Webhook**: set `WEBHOOK` constant in the `<script>` block at the bottom of each page
@@ -162,5 +162,5 @@ function doPost(e) {
 1. Push the `demo-template/` folder to a GitHub repo
 2. Cloudflare Dashboard → Workers & Pages → Create → Pages → Connect Git
 3. Select repo → Framework: **None** → Build command: *(blank)* → Output: `/`
-4. Deploy — done in ~30 seconds
+4. Deploy - done in ~30 seconds
 5. Custom domain: Pages → Custom domains → add domain

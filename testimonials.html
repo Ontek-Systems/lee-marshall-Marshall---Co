@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Testimonials & Reviews | Marshall &amp; Co. Bespoke Home Improvements</title>
+    <meta name="description" content="Read reviews from our clients in Perth and Perthshire. See what homeowners say about Marshall & Co.'s bespoke home improvements, joinery, and renovations." />
+
+    <link rel="stylesheet" href="/fonts.css">
+    <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/tailwind.css">
+
+    
+    <style>
+      /* Services page: hero bottom border */
+      .services-hero-divider {
+        position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+        background: linear-gradient(90deg, transparent 0%, #e8b238 30%, #e8b238 70%, transparent 100%);
+      }
+
+      /* Word-mask reveal animation */
+      .word-mask { display: inline-block; vertical-align: bottom; clip-path: inset(-80% -20% 0% -20%); padding-bottom: 0.25em; margin-bottom: -0.25em; }
+      .word-mask-inner { display: inline-block; transform: translateY(110%); transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); will-change: transform; }
+      h1 .word-mask-inner, h2 .word-mask-inner, h3 .word-mask-inner { transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) !important; }
+      .reveal.active .word-mask-inner { transform: translateY(0); }
+      .title-underline-anim { opacity: 0; }
+      .reveal.active .title-underline-anim { animation: revealUnderline 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 500ms forwards; }
+      @keyframes revealUnderline { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+      .btn-primary {
+        background-color: #e8b238 !important;
+        color: #ffffff !important;
+        border-color: transparent !important;
+        width: auto !important;
+      }
+      .btn-primary:hover {
+        background-color: #000000 !important;
+        border-color: transparent !important;
+        color: #ffffff !important;
+      }
+      .btn-ghost {
+        background-color: transparent !important;
+        color: #ffffff !important;
+        border-color: #ffffff !important;
+        width: auto !important;
+      }
+      .btn-ghost:hover {
+        background-color: #000000 !important;
+        border-color: #000000 !important;
+        color: #ffffff !important;
+      }
+
+      .rv-card {
+        padding: 2rem 2.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        background: #303030;
+        border: 1px solid rgba(255,255,255,0.08);
+        transition: background 0.3s ease, transform 0.3s ease;
+        height: 100%;
+      }
+      .rv-card:hover {
+        background: #e8b238;
+        transform: translateY(-5px);
+      }
+      .rv-card:hover .rv-stars span { color: #ffffff; }
+      .rv-card:hover .rv-verified { color: #ffffff; }
+      .rv-card:hover .rv-foot { border-top-color: rgba(255,255,255,0.25); }
+      .rv-stars { display: flex; gap: 3px; margin-bottom: 1.25rem; justify-content: flex-start; }
+      .rv-stars span { color: #e8b238; font-size: 1rem; transition: color 0.3s ease; }
+      .rv-quote {
+        font-family: 'Griffiths', Georgia, serif;
+        font-style: italic;
+        font-weight: 400;
+        font-size: clamp(1.15rem, 1.65vw, 1.4rem);
+        line-height: 1.65;
+        color: rgba(255,255,255,0.78);
+        margin-bottom: 1.5rem; flex: 1;
+        position: relative; padding-left: 0.25rem;
+      }
+      .rv-foot {
+        display: flex; align-items: center; justify-content: space-between;
+        padding-top: 1.25rem; border-top: 1px solid rgba(255,255,255,0.10);
+        margin-top: auto;
+      }
+      .rv-author {
+        font-family: var(--font-heading, 'Ballantines Serial', Georgia, serif);
+        font-weight: 700; font-size: 1.5rem; color: #ffffff;
+      }
+      .rv-verified {
+        font-family: var(--site-font, sans-serif);
+        font-size: 0.6rem; letter-spacing: 0.18em;
+        text-transform: uppercase; color: #e8b238; font-weight: 700; margin-top: 2px;
+      }
+    </style>
+    <!-- Favicon & App Icons -->
+    <link rel="icon" href="/assets/imgs/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="/assets/imgs/favicon.png">
+      <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://www.marshallandco.uk/pages/testimonials#webpage",
+      "url": "https://www.marshallandco.uk/pages/testimonials",
+      "name": "Client Reviews",
+      "description": "Read reviews from our clients in Perth and Perthshire. See what homeowners say about Marshall & Co.'s bespoke home improvements, joinery, and renovations.",
+      "isPartOf": {
+        "@id": "https://www.marshallandco.uk/#website"
+      },
+      "about": {
+        "@id": "https://www.marshallandco.uk/#business"
+      },
+      "breadcrumb": {
+        "@id": "https://www.marshallandco.uk/pages/testimonials#breadcrumb"
+      },
+      "inLanguage": "en-GB"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.marshallandco.uk/pages/testimonials#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.marshallandco.uk/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Client Reviews",
+          "item": "https://www.marshallandco.uk/pages/testimonials"
+        }
+      ]
+    }
+  ]
+}
+    </script>
+  </head>
+
+<body class="flex flex-col min-h-screen antialiased bg-[#fff9eb] text-[#303030]">
+
+    <div id="header-placeholder"></div>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="relative pt-[210px] pb-20 sm:pt-[220px] md:pt-[230px] md:pb-32 lg:pt-[240px] flex items-center justify-center overflow-hidden" style="background:#303030;">
+
+            <div class="absolute inset-0 z-0 pointer-events-none">
+                <img src="/assets/imgs/all_imgs/483862544_955133570098956_7633881038435765275_n.jpg" width="2048" height="1536"
+                    alt="Client reviews for Marshall & Co. Bespoke Home Improvements"
+                    class="absolute inset-0 w-full h-full object-cover opacity-15"
+                    style="filter: saturate(0.5) brightness(0.4);">
+                <div class="absolute inset-0 bg-gradient-to-b from-[#303030]/45 via-[#303030]/32 to-[#303030]/48"></div>
+            </div>
+
+            <div class="w-full max-w-[98rem] mx-auto px-4 sm:px-6 lg:px-10 relative z-20 text-center text-white reveal flex flex-col items-center">
+
+                <span class="word-mask-inner inline-block section-tagline eyebrow-chapter cursor-default" style="transition-delay:50ms; display:inline-flex; align-items:center; gap:10px; font-weight:500; font-size:0.77rem !important; margin-bottom:1.5rem;"><span class="eyebrow-gold" style="color:var(--gs-accent); letter-spacing:0;">01</span><span class="eyebrow-gold" style="color:var(--gs-accent); letter-spacing:0;">/</span><span class="eyebrow-label" style="letter-spacing:0.25em; color:rgba(255,255,255,0.65);">Happy Clients</span></span>
+
+                <h1 class="section-heading text-white justify-center" style="font-size:clamp(2.54rem, 4.07vw, 3.63rem) !important; font-weight:700; margin-top:0; margin-bottom:1.275rem !important;">
+                    <span class="word-mask"><span class="word-mask-inner" style="transition-delay:100ms;">Client Reviews</span></span>
+                </h1>
+
+                <p class="title-underline-anim font-body leading-relaxed" style="animation-delay:500ms; font-size:1.1rem !important; font-weight:400; color:rgba(255,255,255,0.78); max-width:42rem; margin:0 auto;">
+                    Don't just take our word for it. Read what homeowners across Perth and Perthshire say about the Marshall &amp; Co. standard of finish.
+                </p>
+
+            </div>
+
+            <!-- gold divider rule -->
+            <div class="absolute bottom-0 left-0 right-0" style="height:6px; background:#e8b238;"></div>
+        </section>
+
+        <!-- GOOGLE REVIEWS GRID -->
+        <section class="relative py-20 md:py-32 bg-white">
+            <div class="w-full max-w-[96rem] mx-auto px-4 sm:px-8 lg:px-12">
+
+                <!-- Section header -->
+                <div class="mb-12 md:mb-20 reveal text-center flex flex-col items-center">
+                    <span class="word-mask-inner inline-block section-tagline eyebrow-chapter cursor-default" style="transition-delay:50ms; display:inline-flex; align-items:center; gap:10px; font-weight:500; font-size:0.77rem !important; margin-bottom:1.5rem;"><span class="eyebrow-gold" style="color:var(--gs-accent); letter-spacing:0;">02</span><span class="eyebrow-gold" style="color:var(--gs-accent); letter-spacing:0;">/</span><span class="eyebrow-label" style="letter-spacing:0.25em; color:rgba(48,48,48,0.65);">Feedback</span></span>
+                    <h2 class="section-heading text-[#303030] justify-center items-center text-center w-full" style="font-size:clamp(2.54rem, 4.07vw, 3.63rem) !important; font-weight:700; margin-top:0; margin-bottom:1.275rem !important;">
+                        <span class="flex flex-wrap justify-center gap-x-3 lg:gap-x-4 leading-tight">
+                            <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 100ms;">Read</span></span>
+                            <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 200ms;">The</span></span>
+                            <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 300ms;">Feedback</span></span>
+                        </span>
+                    </h2>
+                    <p class="title-underline-anim font-body leading-relaxed" style="animation-delay:500ms; font-size:1.1rem !important; font-weight:400; color:rgba(48,48,48,0.80); max-width:42rem; margin:0 auto;">We let our work speak for itself. Here is what homeowners across Perthshire have said after choosing Marshall &amp; Co.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 reveal reveal-up">
+
+                    <!-- Review 1 -->
+                    <a href="https://share.google/4SOvcPMkwjtGYISrP" target="_blank" rel="noopener noreferrer" class="rv-card" style="text-decoration:none; cursor:pointer;">
+                        <div class="rv-stars"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span></div>
+                        <p class="rv-quote" style="text-align:left !important;">"Lee and his team carried out a first floor extension at my home. He has a high attention to detail, was quick to rectify any issues and was fully accountable. We are delighted with the finished works and it's made a huge difference to our home. I would recommend Marshall &amp; Co and will no doubt call on their services again."</p>
+                        <div class="rv-foot" style="display:flex; align-items:center; justify-content:space-between; padding-top:1.25rem; border-top:1px solid rgba(255,255,255,0.10); margin-top:auto;">
+                            <div style="flex:1; text-align:left !important;"><p class="rv-author" style="text-align:left !important;">John Mitchell</p><p class="rv-verified" style="text-align:left !important;">Verified Google Review</p></div>
+                            <svg class="w-7 h-7 opacity-70 flex-shrink-0 transition-opacity duration-300" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                        </div>
+                    </a>
+
+                    <!-- Review 2 -->
+                    <a href="https://share.google/4SOvcPMkwjtGYISrP" target="_blank" rel="noopener noreferrer" class="rv-card" style="text-decoration:none; cursor:pointer;">
+                        <div class="rv-stars"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span></div>
+                        <p class="rv-quote" style="text-align:left !important;">"Marshall &amp; Co renovated our family bathroom and we could not be happier. From start to finish they handled everything for us. The process was completely stress free, affordable and carried out to an incredible standard. Would highly recommend and will be using again."</p>
+                        <div class="rv-foot" style="display:flex; align-items:center; justify-content:space-between; padding-top:1.25rem; border-top:1px solid rgba(255,255,255,0.10); margin-top:auto;">
+                            <div style="flex:1; text-align:left !important;"><p class="rv-author" style="text-align:left !important;">Zak Hegarty</p><p class="rv-verified" style="text-align:left !important;">Verified Google Review</p></div>
+                            <svg class="w-7 h-7 opacity-70 flex-shrink-0 transition-opacity duration-300" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                        </div>
+                    </a>
+
+                    <!-- Review 3 -->
+                    <a href="https://share.google/4SOvcPMkwjtGYISrP" target="_blank" rel="noopener noreferrer" class="rv-card" style="text-decoration:none; cursor:pointer;">
+                        <div class="rv-stars"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span></div>
+                        <p class="rv-quote" style="text-align:left !important;">"Lee and the team done an amazing job on my new build. The attention to detail ensured all project specifications were met accurately. They were an extremely hard working team and nothing was a problem. I would highly recommend them."</p>
+                        <div class="rv-foot" style="display:flex; align-items:center; justify-content:space-between; padding-top:1.25rem; border-top:1px solid rgba(255,255,255,0.10); margin-top:auto;">
+                            <div style="flex:1; text-align:left !important;"><p class="rv-author" style="text-align:left !important;">Ali Tod</p><p class="rv-verified" style="text-align:left !important;">Verified Google Review</p></div>
+                            <svg class="w-7 h-7 opacity-70 flex-shrink-0 transition-opacity duration-300" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                        </div>
+                    </a>
+
+                    <!-- Review 4 -->
+                    <a href="https://share.google/4SOvcPMkwjtGYISrP" target="_blank" rel="noopener noreferrer" class="rv-card" style="text-decoration:none; cursor:pointer;">
+                        <div class="rv-stars"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span></div>
+                        <p class="rv-quote" style="text-align:left !important;">"Lee and his guys fitted new flooring for the whole downstairs in our house in just a day and half and made a fantastic job. Efficient, clean and great attention to detail, I would highly recommend them!"</p>
+                        <div class="rv-foot" style="display:flex; align-items:center; justify-content:space-between; padding-top:1.25rem; border-top:1px solid rgba(255,255,255,0.10); margin-top:auto;">
+                            <div style="flex:1; text-align:left !important;"><p class="rv-author" style="text-align:left !important;">Jamie Hill</p><p class="rv-verified" style="text-align:left !important;">Verified Google Review</p></div>
+                            <svg class="w-7 h-7 opacity-70 flex-shrink-0 transition-opacity duration-300" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                        </div>
+                    </a>
+
+                    <!-- Review 5 -->
+                    <a href="https://share.google/4SOvcPMkwjtGYISrP" target="_blank" rel="noopener noreferrer" class="rv-card" style="text-decoration:none; cursor:pointer;">
+                        <div class="rv-stars"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span></div>
+                        <p class="rv-quote" style="text-align:left !important;">"From our first contact with Lee, we were impressed by his friendly professionalism and genuine concern to help us achieve the best outcome. His estimate was very competitive and his team were on-time every day. Lee took full responsibility for any issues and the end result, a large extension, is something my wife and I are very pleased with. We will seek out Lee as our first choice for any future work."</p>
+                        <div class="rv-foot" style="display:flex; align-items:center; justify-content:space-between; padding-top:1.25rem; border-top:1px solid rgba(255,255,255,0.10); margin-top:auto;">
+                            <div style="flex:1; text-align:left !important;"><p class="rv-author" style="text-align:left !important;">David Thomson</p><p class="rv-verified" style="text-align:left !important;">Verified Google Review</p></div>
+                            <svg class="w-7 h-7 opacity-70 flex-shrink-0 transition-opacity duration-300" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                        </div>
+                    </a>
+
+                    <!-- Review 6 -->
+                    <a href="https://share.google/4SOvcPMkwjtGYISrP" target="_blank" rel="noopener noreferrer" class="rv-card" style="text-decoration:none; cursor:pointer;">
+                        <div class="rv-stars"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span></div>
+                        <p class="rv-quote" style="text-align:left !important;">"Marshall &amp; Co renovated my house and I couldn't be happier with the results. The entire team was incredibly professional from start to finish, and they did an absolutely amazing job. Highly recommend."</p>
+                        <div class="rv-foot" style="display:flex; align-items:center; justify-content:space-between; padding-top:1.25rem; border-top:1px solid rgba(255,255,255,0.10); margin-top:auto;">
+                            <div style="flex:1; text-align:left !important;"><p class="rv-author" style="text-align:left !important;">Callum MacDiarmid</p><p class="rv-verified" style="text-align:left !important;">Verified Google Review</p></div>
+                            <svg class="w-7 h-7 opacity-70 flex-shrink-0 transition-opacity duration-300" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                        </div>
+                    </a>
+
+                    <!-- Review 7 -->
+                    <a href="https://share.google/4SOvcPMkwjtGYISrP" target="_blank" rel="noopener noreferrer" class="rv-card" style="text-decoration:none; cursor:pointer;">
+                        <div class="rv-stars"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span></div>
+                        <p class="rv-quote" style="text-align:left !important;">"Hired Marshall &amp; Co to fit a corner deck in my garden. Cannot praise Lee and Michael enough. Good advice given throughout and nothing too much bother. We even ended up with a couple of bespoke planters made for a fraction of the price we would pay online. Highly recommended."</p>
+                        <div class="rv-foot" style="display:flex; align-items:center; justify-content:space-between; padding-top:1.25rem; border-top:1px solid rgba(255,255,255,0.10); margin-top:auto;">
+                            <div style="flex:1; text-align:left !important;"><p class="rv-author" style="text-align:left !important;">Steve Bernard</p><p class="rv-verified" style="text-align:left !important;">Verified Google Review</p></div>
+                            <svg class="w-7 h-7 opacity-70 flex-shrink-0 transition-opacity duration-300" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                        </div>
+                    </a>
+
+                    <!-- Review 8 -->
+                    <a href="https://share.google/4SOvcPMkwjtGYISrP" target="_blank" rel="noopener noreferrer" class="rv-card" style="text-decoration:none; cursor:pointer;">
+                        <div class="rv-stars"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span></div>
+                        <p class="rv-quote" style="text-align:left !important;">"Lee was instrumental in completing a back-to-brick project for me which showcased not only his skills as a joiner but also his understanding of project management and problem solving to ensure a smooth handover."</p>
+                        <div class="rv-foot" style="display:flex; align-items:center; justify-content:space-between; padding-top:1.25rem; border-top:1px solid rgba(255,255,255,0.10); margin-top:auto;">
+                            <div style="flex:1; text-align:left !important;"><p class="rv-author" style="text-align:left !important;">Doug Millar</p><p class="rv-verified" style="text-align:left !important;">Verified Google Review</p></div>
+                            <svg class="w-7 h-7 opacity-70 flex-shrink-0 transition-opacity duration-300" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                        </div>
+                    </a>
+
+                    <!-- Review 9 -->
+                    <a href="https://share.google/4SOvcPMkwjtGYISrP" target="_blank" rel="noopener noreferrer" class="rv-card" style="text-decoration:none; cursor:pointer;">
+                        <div class="rv-stars"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span></div>
+                        <p class="rv-quote" style="text-align:left !important;">"We can highly recommend Marshall &amp; Co. Lee gave us a quote and a plan very quickly, started three weeks later and it's been smooth sailing ever since. No delays, all tradesmen highly skilled and friendly. We lived in the house throughout and I'm thankful to Lee and the guys who ensured minimal upheaval to our family."</p>
+                        <div class="rv-foot" style="display:flex; align-items:center; justify-content:space-between; padding-top:1.25rem; border-top:1px solid rgba(255,255,255,0.10); margin-top:auto;">
+                            <div style="flex:1; text-align:left !important;"><p class="rv-author" style="text-align:left !important;">Louise Macaulay</p><p class="rv-verified" style="text-align:left !important;">Verified Google Review</p></div>
+                            <svg class="w-7 h-7 opacity-70 flex-shrink-0 transition-opacity duration-300" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Leave a Google Review -->
+        <div style="background:#303030;" class="py-16 lg:py-24">
+            <div class="w-full max-w-[96rem] mx-auto px-4 sm:px-8 lg:px-12 relative z-20">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-28 items-center reveal reveal-up">
+
+                    <div class="flex flex-col items-center lg:items-start text-center lg:text-left order-1 lg:order-2">
+                        <div class="group cursor-default flex flex-col items-center lg:items-start">
+                            <span class="word-mask-inner inline-block section-tagline eyebrow-chapter cursor-default" style="transition-delay:50ms; display:inline-flex; align-items:center; gap:10px; font-weight:500; font-size:0.77rem !important; margin-bottom:1.5rem;"><span class="eyebrow-gold" style="color:var(--gs-accent); letter-spacing:0;">03</span><span class="eyebrow-gold" style="color:var(--gs-accent); letter-spacing:0;">/</span><span class="eyebrow-label" style="letter-spacing:0.25em; color:rgba(255,255,255,0.65);">Leave a Review</span></span>
+                            <h2 class="section-heading text-white justify-center lg:justify-start items-center lg:items-start" style="font-size:clamp(2.54rem, 4.07vw, 3.63rem) !important; font-weight:700; margin-top:0; margin-bottom:1.275rem !important;">
+                                <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 100ms;">Leave</span></span>
+                                <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 200ms;">Us</span></span>
+                                <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 300ms;">a</span></span>
+                                <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 400ms;">Google</span></span>
+                                <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 500ms;">Review</span></span>
+                            </h2>
+                        </div>
+                        <p class="title-underline-anim font-body leading-relaxed mb-10" style="animation-delay:500ms; font-size:1.1rem !important; font-weight:400; color:rgba(255,255,255,0.78); max-width:42rem;">
+                            Your feedback helps other homeowners across Perth and Perthshire find a trusted local craftsman. It takes less than a minute and means a great deal to us.
+                        </p>
+                        <div class="title-underline-anim w-full flex justify-center lg:justify-start" style="animation-delay: 900ms;">
+                            <a href="https://share.google/0sHS42RlbUok3s6kZ" target="_blank" rel="noopener noreferrer" class="btn-primary">Write a Review</a>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center lg:justify-end order-2 lg:order-1">
+                        <div class="w-full max-w-xl flex flex-col items-center text-center gap-[5px] p-6 md:p-10">
+                            <div class="flex flex-col items-center justify-center gap-4">
+                                <svg class="w-[67px] h-[67px]" viewBox="0 0 24 24">
+                                    <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/>
+                                    <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/>
+                                    <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/>
+                                    <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/>
+                                </svg>
+                                <div>
+                                    <p class="font-body text-[22px] md:text-[24px] text-white/70 uppercase tracking-widest leading-relaxed">Scan here!</p>
+                                </div>
+                            </div>
+                            <div class="flex-shrink-0 w-[250px] h-[250px] md:w-[307px] md:h-[307px] rounded-none overflow-hidden">
+                                <img src="/assets/imgs/qrcode.png" width="1155" height="1155" alt="Scan to leave a Google review for Marshall & Co. Bespoke Home Improvements" class="w-full h-full object-contain">
+                                <div class="mt-2 flex flex-col items-center gap-1 opacity-60">
+                                    <p class="font-body text-sm font-bold tracking-widest uppercase text-white/60">07940 568877</p>
+                                    <p class="font-body text-[10px] md:text-xs tracking-widest uppercase text-white/40">Perth, Scotland</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+
+  <!-- ================================================
+       PRE-FOOTER CTA
+  ================================================ -->
+  <section id="cta-section-testimonials" class="min-h-screen flex flex-col justify-center" style="background:#303030;">
+    <div class="w-full max-w-[96rem] mx-auto flex flex-col lg:flex-row">
+
+      <!-- Left: sticky text content - white background -->
+      <div class="w-full lg:w-1/2 relative" style="background:#ffffff;">
+        <div class="lg:sticky lg:top-[88px] xl:top-[172px]">
+          <div class="px-4 sm:px-8 lg:px-12 py-16 lg:py-20 xl:py-24 flex flex-col items-center text-center lg:items-start lg:text-left reveal">
+
+          <span class="word-mask-inner inline-block section-tagline eyebrow-chapter cursor-default" style="transition-delay:50ms; display:inline-flex; align-items:center; gap:10px; font-weight:500; font-size:0.77rem !important;"><span class="eyebrow-gold" style="color:var(--gs-accent); letter-spacing:0;">04</span><span class="eyebrow-gold" style="color:var(--gs-accent); letter-spacing:0;">/</span><span class="eyebrow-label" style="letter-spacing:0.25em; color:rgba(48,48,48,0.65);">Get Started</span></span>
+          <h2 class="section-heading justify-center lg:justify-start items-center lg:items-start" style="color:#303030; font-size: clamp(2.54rem, 4.07vw, 3.63rem) !important; margin-top: 1.5rem !important; margin-bottom: 1.275rem !important;">
+            <span class="word-mask"><span class="word-mask-inner" style="transition-delay:100ms;">Inquire</span></span>
+            <span class="word-mask"><span class="word-mask-inner" style="transition-delay:200ms;">About</span></span>
+            <span class="word-mask w-full mt-1"><span class="word-mask-inner" style="transition-delay:300ms;">a Quote.</span></span>
+          </h2>
+          <p class="title-underline-anim font-body leading-relaxed max-w-md mb-10" style="font-size:1.1rem !important; color:rgba(48,48,48,0.80); animation-delay:600ms;">
+            Tell us what you have in mind. We will get back to you personally with honest advice and a clear, fixed price. No obligation, no pressure.
+          </p>
+          <div class="title-underline-anim flex flex-col sm:flex-row items-center gap-4 sm:gap-6" style="animation-delay:750ms;">
+            <a href="/contact" class="btn-primary">Get a Quote</a>
+            <a href="tel:07940568877" class="font-body font-bold text-base tracking-wide underline underline-offset-[8px] decoration-2 transition-all duration-300 whitespace-nowrap" style="color:#303030; text-decoration-color:rgba(48,48,48,0.4);">or Call us</a>
+          </div>
+        </div>
+        </div>
+      </div>
+
+      <!-- Vertical gold divider (desktop only) -->
+      <div class="hidden lg:block self-stretch shrink-0" style="width:6px; background:#e8b238;"></div>
+
+      <!-- Right: three stacked images with hover zoom -->
+      <div class="flex w-full lg:w-1/2 flex-col">
+        <div class="lg:hidden shrink-0" style="height:6px; background:#e8b238;"></div>
+        <div class="overflow-hidden relative group" style="min-height:300px; height:56vw; max-height:480px;">
+          <img src="/assets/imgs/general_imgs/footer1.jpg" width="1400" height="1050" alt="Completed bespoke home extension by Marshall &amp; Co. in Perthshire"
+            class="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-[1.07]"
+            loading="lazy">
+        </div>
+        <div class="shrink-0" style="height:6px; background:#e8b238;"></div>
+        <div class="overflow-hidden relative group" style="min-height:300px; height:56vw; max-height:480px;">
+          <img src="/assets/imgs/general_imgs/footer2.jpg" width="1400" height="1050" alt="Bespoke timber extension and joinery by Marshall &amp; Co., Perth"
+            class="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-[1.07]"
+            loading="lazy">
+        </div>
+        <div class="shrink-0" style="height:6px; background:#e8b238;"></div>
+        <div class="overflow-hidden relative group" style="min-height:300px; height:56vw; max-height:480px;">
+          <img src="/assets/imgs/all_imgs/WhatsApp Image 2026-06-03 at 16.47.58 (12).jpeg" width="1400" height="1050" alt="Bespoke home improvement work by Marshall &amp; Co. in Perthshire"
+            class="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover:scale-[1.07]"
+            loading="lazy">
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+    <div id="footer-placeholder"></div>
+    <script src="/global.js"></script>
+
+</body>
+</html>

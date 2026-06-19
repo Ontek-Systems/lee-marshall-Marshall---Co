@@ -3,10 +3,10 @@
 ## 1. How to Work with Me (AI Directives)
 - **Speed & Focus:** Act fast. Don't over-think. Pick the obvious approach and execute.
 - **Output:** Smallest change that does the job. Keep responses short. One line on what changed and where.
-- **Context Efficiency:** Don't re-read files unless told they changed. Don't summarize what you're about to do—just do it.
+- **Context Efficiency:** Don't re-read files unless told they changed. Don't summarize what you're about to do-just do it.
 - **Finding Things:** If a section, class, or file is named, go straight to it. Don't grep blindly.
 - **No Refactoring:** Only edit what is asked. Don't "improve" unrelated code.
-- **Tone:** Real data only. No Lorem Ipsum. High-converting, professional, bespoke construction copy. NO em-dashes (—).
+- **Tone:** Real data only. No Lorem Ipsum. High-converting, professional, bespoke construction copy. NO em-dashes (-).
 
 ## 2. Business Context
 - **Company**: Marshall & Co. Bespoke Home Improvements

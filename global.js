@@ -68,28 +68,16 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 async function loadComponents() {
     const path = window.location.pathname;
-    const isPagesLocationPagesDir = path.includes('/pages/location_pages/');
-    const isPagesLocationsDir = !isPagesLocationPagesDir && path.includes('/pages/locations/');
-    const isPagesServiceDir = !isPagesLocationsDir && !isPagesLocationPagesDir && (path.includes('/pages/services/') || path.includes('/pages/service_pages/'));
-    const isPagesDir = !isPagesServiceDir && !isPagesLocationsDir && !isPagesLocationPagesDir && path.includes('/pages/');
-    let basePath = '';
-    if (isPagesServiceDir || isPagesLocationsDir || isPagesLocationPagesDir) basePath = '../../';
-    else if (isPagesDir) basePath = '../';
+    // Components use root-absolute links/assets, so no per-page path rewriting is needed.
 
     const headerPlaceholder = document.getElementById('header-placeholder');
     if (headerPlaceholder) {
         try {
-            const resp = await fetch(basePath + 'components/header.html');
+            const resp = await fetch('/components/header.html');
             let html = await resp.text();
-            if (basePath) {
-                html = html.replace(/(href|src)="([^"]*)"/g, (match, p1, p2) => {
-                    if (p2.startsWith('http') || p2.startsWith('mailto:') || p2.startsWith('tel:') || p2.startsWith('#') || p2.startsWith('/')) return match;
-                    return `${p1}="${basePath + p2}"`;
-                });
-            }
-            
-            if (path.includes('contact.html')) {
-                html = html.replace(/href="[^"]*index\.html#faq"/g, 'href="#faq"');
+
+            if (path.includes('/contact')) {
+                html = html.replace(/href="\/#faq"/g, 'href="#faq"');
             }
             headerPlaceholder.outerHTML = html;
         } catch (e) {
@@ -100,14 +88,8 @@ async function loadComponents() {
     const footerPlaceholder = document.getElementById('footer-placeholder');
     if (footerPlaceholder) {
         try {
-            const resp = await fetch(basePath + 'components/footer.html');
+            const resp = await fetch('/components/footer.html');
             let html = await resp.text();
-            if (basePath) {
-                html = html.replace(/(href|src)="([^"]*)"/g, (match, p1, p2) => {
-                    if (p2.startsWith('http') || p2.startsWith('mailto:') || p2.startsWith('tel:') || p2.startsWith('#') || p2.startsWith('/')) return match;
-                    return `${p1}="${basePath + p2}"`;
-                });
-            }
             if (document.body.hasAttribute('data-suppress-footer-cta')) {
                 const footerStart = html.indexOf('<footer');
                 if (footerStart !== -1) html = html.slice(footerStart);
@@ -142,10 +124,10 @@ function initServicesMegaMenu() {
 function initHeaderScroll() {
     const header = document.getElementById('site-header');
     const container = document.getElementById('header-container');
-    const isServicePage = window.location.pathname.match(/\/pages\/services\/.+\.html/);
+    const isServicePage = window.location.pathname.match(/\/services\/.+/);
 
     if (header && container) {
-        if (window.location.pathname.includes('thank-you.html')) {
+        if (window.location.pathname.includes('thank-you')) {
             header.classList.add('scrolled');
             header.classList.remove('bg-transparent', 'border-transparent');
             header.classList.add('bg-[#303030]', 'backdrop-blur-md', 'shadow-md', 'border-white/10');
@@ -154,7 +136,7 @@ function initHeaderScroll() {
             return;
         }
 
-        if (window.location.pathname.includes('contact.html') || window.location.pathname.includes('testimonials.html') || window.location.pathname.includes('gallery.html') || window.location.pathname.includes('about.html') || window.location.pathname.includes('services.html') || window.location.pathname.includes('locations.html') || window.location.pathname.includes('service_pages') || window.location.pathname.includes('location_pages')) {
+        if (window.location.pathname.includes('/contact') || window.location.pathname.includes('/testimonials') || window.location.pathname.includes('/gallery') || window.location.pathname.includes('/about') || window.location.pathname.includes('/services') || window.location.pathname.includes('/locations')) {
             const banner = document.getElementById('top-banner');
             header.classList.add('scrolled');
             header.classList.remove('bg-transparent', 'border-transparent');
@@ -199,12 +181,12 @@ function setActiveNav() {
     const path = window.location.pathname;
 
     const matchers = [
-        { test: p => p === '/' || p.endsWith('index.html'), label: 'Home' },
-        { test: p => p.includes('/pages/services'), label: 'Services' },
-        { test: p => p.includes('/pages/about'), label: 'About Us' },
-        { test: p => p.includes('/pages/gallery'), label: 'Gallery' },
-        { test: p => p.includes('/pages/contact') || p.endsWith('contact.html'), label: 'Contact' },
-        { test: p => p.includes('/pages/locations/') || p.includes('/pages/location_pages/'), label: 'Where We Build' },
+        { test: p => p === '/' || p.endsWith('/index'), label: 'Home' },
+        { test: p => p.includes('/services'), label: 'Services' },
+        { test: p => p.includes('/about'), label: 'About Us' },
+        { test: p => p.includes('/gallery'), label: 'Gallery' },
+        { test: p => p.includes('/contact'), label: 'Contact' },
+        { test: p => p.includes('/locations'), label: 'Where We Build' },
     ];
 
     let activeLabel = null;

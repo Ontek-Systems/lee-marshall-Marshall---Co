@@ -1,12 +1,12 @@
 /* ============================================================
-   Marshall & Co. Bespoke Home Improvements — Global Stylesheet
+   Marshall & Co. Bespoke Home Improvements - Global Stylesheet
    Brand Palette:
-     #303030  Dark Grey     — primary dark, text, dark section backgrounds
-     #ffffff  White         — main page backgrounds
-     #fff9eb  Beige         — luxury section backgrounds
-     #e8b238  Gold          — accents, buttons, hover states
-     #5b4a36  Brown         — timber/earth accent
-     #000000  Black         — premium footer
+     #303030  Dark Grey     - primary dark, text, dark section backgrounds
+     #ffffff  White         - main page backgrounds
+     #fff9eb  Beige         - luxury section backgrounds
+     #e8b238  Gold          - accents, buttons, hover states
+     #5b4a36  Brown         - timber/earth accent
+     #000000  Black         - premium footer
    ============================================================ */
 
 @theme {
@@ -19,7 +19,7 @@
 }
 
 /* ============================================================
-   TYPOGRAPHY SYSTEM — edit ONLY these variables to change
+   TYPOGRAPHY SYSTEM - edit ONLY these variables to change
    text size, weight, or spacing across the whole site.
    Three roles:
      hero     → full-viewport hero section
@@ -91,7 +91,7 @@ p { font-weight: var(--section-body-weight) !important; }
 
 /* ── Typography role classes ── */
 
-/* Hero heading — use on h1/h2 inside hero */
+/* Hero heading - use on h1/h2 inside hero */
 .t-hero-heading {
   font-family: 'Griffiths', serif !important;
   font-size: var(--hero-heading-size) !important;
@@ -100,7 +100,7 @@ p { font-weight: var(--section-body-weight) !important; }
   margin-bottom: var(--hero-heading-gap) !important;
 }
 
-/* Hero body — use on <p> inside hero */
+/* Hero body - use on <p> inside hero */
 .t-hero-body {
   font-family: var(--site-font) !important;
   font-size: var(--hero-body-size) !important;
@@ -109,7 +109,7 @@ p { font-weight: var(--section-body-weight) !important; }
   margin-bottom: var(--hero-body-gap) !important;
 }
 
-/* Section heading — use on h2 in content sections */
+/* Section heading - use on h2 in content sections */
 .t-section-heading {
   font-family: 'Griffiths', serif !important;
   font-size: var(--section-heading-size) !important;
@@ -118,7 +118,7 @@ p { font-weight: var(--section-body-weight) !important; }
   margin-bottom: var(--section-heading-gap) !important;
 }
 
-/* Section body — use on <p> in content sections */
+/* Section body - use on <p> in content sections */
 .t-section-body {
   font-family: var(--site-font) !important;
   font-size: var(--section-body-size) !important;
@@ -137,7 +137,7 @@ p { font-weight: var(--section-body-weight) !important; }
   margin-bottom: var(--label-gap) !important;
 }
 
-/* Legacy aliases — keep so existing HTML classes still work */
+/* Legacy aliases - keep so existing HTML classes still work */
 .font-heading, .gs-heading, .section-heading {
   font-family: 'Griffiths', serif !important;
   font-size: var(--section-heading-size) !important;
@@ -161,7 +161,7 @@ p { font-weight: var(--section-body-weight) !important; }
    The .word-mask clip box was shearing italic letters (Craftsman, Project…).
    Headings now render as plain static text, exactly like the hero (which
    never clipped because it has no word-mask). Sacrifices the per-word
-   slide-up animation only — all other animations are untouched. */
+   slide-up animation only - all other animations are untouched. */
 .word-mask { clip-path: none !important; overflow: visible !important; padding-bottom: 0 !important; margin-bottom: 0 !important; }
 .word-mask-inner { transform: none !important; }
 
@@ -176,7 +176,7 @@ h1 .word-mask-inner, h2 .word-mask-inner, h3 .word-mask-inner { display: inline 
 /* ── Chapter-numbered eyebrow hover (Our Story / Our Gallery) ── */
 .eyebrow-chapter:hover .eyebrow-label { color: var(--gs-accent); }
 
-/* ── Site-wide banner text — applies to top info bar and bottom trust ticker ── */
+/* ── Site-wide banner text - applies to top info bar and bottom trust ticker ── */
 .site-banner, .site-banner * {
   font-size: 10px !important;
   font-weight: 500 !important;
@@ -284,7 +284,7 @@ img {
 }
 
 /* ── Global button standard ───────────────────────────────────────────────
-   Two variants — both share the same sizing/weight/radius.
+   Two variants - both share the same sizing/weight/radius.
    .btn-primary  : gold solid (light sections)
    .btn-ghost    : white outline (dark/image sections)
    .btn-adaptive : context-aware via .section-dark tokens (legacy, kept for
@@ -310,7 +310,7 @@ img {
   transition: background-color 280ms ease, border-color 280ms ease, color 280ms ease;
 }
 
-/* Gold solid — light backgrounds (white / beige) */
+/* Gold solid - light backgrounds (white / beige) */
 .btn-primary {
   background-color: var(--gs-btn-bg);
   color: var(--gs-btn-fg);
@@ -322,14 +322,14 @@ img {
   color: var(--gs-btn-fg-hover, #ffffff);
 }
 
-/* On dark (non-section-dark) backgrounds — hover flips to white bg + gold text */
+/* On dark (non-section-dark) backgrounds - hover flips to white bg + gold text */
 .btn-dark-hover:hover {
   background-color: #ffffff !important;
   border-color: transparent !important;
   color: #e8b238 !important;
 }
 
-/* White outline — dark backgrounds / over images */
+/* White outline - dark backgrounds / over images */
 .btn-ghost,
 .btn-primary-white {
   background-color: transparent;
@@ -743,6 +743,16 @@ span.pill-dark-bg:hover {
 }
 .svc-dot:hover { transform: scale(1.3); }
 .svc-dot.active { background: #e8b238; width: 24px; }
+
+/* --Inline body copy cross-links-- */
+.body-link {
+    color: #e8b238;
+    text-decoration: underline;
+    text-decoration-color: rgba(232,178,56,0.45);
+    text-underline-offset: 3px;
+    transition: color 0.2s, text-decoration-color 0.2s;
+}
+.body-link:hover { color: #c99a20; text-decoration-color: #c99a20; }
 
 /* --Animate infinite scroll --*/
 .animate-infinite-scroll {
