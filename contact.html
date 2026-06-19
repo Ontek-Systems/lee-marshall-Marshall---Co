@@ -808,7 +808,7 @@
 
           // Honeypot check
           if (document.getElementById('botcheck').value !== '') {
-            window.location.href = '../thank-you.html';
+            window.location.href = '/thank-you.html';
             return;
           }
 
@@ -829,7 +829,7 @@
 
           fetch(webhookUrl, { method: 'POST', headers: { 'Content-Type': 'text/plain' }, body: payload, mode: 'no-cors' })
             .then(function () {
-              window.location.href = '../thank-you.html';
+              window.location.href = '/thank-you.html';
             })
             .catch(function (err) {
               console.error('Form error:', err);

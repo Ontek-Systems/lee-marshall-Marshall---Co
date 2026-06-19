@@ -1,0 +1,29 @@
+/*
+  Tailwind v4 build input for Marshall & Co.
+  Compiles to ../tailwind.css (committed, served statically on Cloudflare Pages).
+  Rebuild after changing markup or brand tokens:  npm run build:css
+
+  @source globs tell Tailwind which files to scan for class names. global.js is
+  included because it adds classes at runtime (e.g. bg-[#303030], bg-brand-dark/95)
+  that appear nowhere in the HTML.
+*/
+@import "tailwindcss";
+
+@source "./*.html";
+@source "./services/**/*.html";
+@source "./locations/**/*.html";
+@source "./components/**/*.html";
+@source "./global.js";
+
+/* Brand colour tokens. These generate the bg-brand-*, text-brand-*, border-brand-*
+   utilities used across the site. Values are identical to the inline @theme blocks
+   they replace. Font tokens are intentionally omitted: style.css sets the real fonts
+   with !important, so they always win regardless. */
+@theme {
+  --color-brand-dark: #303030;
+  --color-brand-ocean: #303030;
+  --color-brand-bronze: #e8b238;
+  --color-brand-alice: #ffffff;
+  --color-brand-beige: #fff9eb;
+  --color-brand-text: #303030;
+}

@@ -1,0 +1,13 @@
+{
+  "name": "marshall-and-co-bespoke-home-improvements",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static site for Marshall & Co. Bespoke Home Improvements. Tailwind CSS is pre-built to a static file (no runtime CDN compiler).",
+  "scripts": {
+    "build:css": "tailwindcss -i ./tailwind.input.css -o ./tailwind.css --minify",
+    "watch:css": "tailwindcss -i ./tailwind.input.css -o ./tailwind.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.0"
+  }
+}

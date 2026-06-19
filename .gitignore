@@ -1,0 +1,9 @@
+# Dependencies (Tailwind CLI build tooling). Reinstall with: npm install
+node_modules/
+
+# OS / editor cruft
+.DS_Store
+
+# NOTE: tailwind.css is the built production stylesheet and IS committed on purpose.
+# Cloudflare Pages serves it statically with no build step. Rebuild it after markup
+# or token changes with: npm run build:css
