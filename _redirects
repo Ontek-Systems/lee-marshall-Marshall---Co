@@ -97,7 +97,7 @@ https://marshallandco.uk/*   https://www.marshallandco.uk/:splat   301
 /services/plumbing-fixture-installation-perth /services  301
 
 # -- [DECISION] trades Lee may or may not actually do --
-/services/roofing-perth      /services/roofing    301   # roofing page now live
+/services/roofing-perth      /services/roofing    301
 /services/joiner-perth       /services    301   # [DECISION] 6 clicks. If Lee does joinery, build the page.
 /services/carpenter-perth    /services    301   # [DECISION] same trade as joiner.
 /services/landscaping-perth  /services    301   # [DECISION] 194 imp. Closest fallback is /services/decking if you prefer.
@@ -112,7 +112,7 @@ https://marshallandco.uk/*   https://www.marshallandco.uk/:splat   301
 /kitchen-renovations-perth/     /services/kitchen-renovations  301
 /bedroom-renovations-perth/     /services/home-renovations     301
 /insurance-repair-works-perth/  /services/insurance-repairs    301
-/roofing-perth/                 /services/roofing              301   # roofing page now live
+/roofing-perth/                 /services/roofing              301
 
 
 # ------------------------------------------------------------
