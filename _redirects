@@ -1,0 +1,155 @@
+# ============================================================
+#  marshallandco.uk  -  REDIRECT MAP  (Cloudflare Pages)
+#  Format:  SOURCE  DESTINATION  STATUS
+#  Read TOP TO BOTTOM, FIRST MATCH WINS. 301 = permanent.
+#  Canonical host is WWW (matches sitemap + rel=canonical).
+#
+#  Verified against the live 41-URL sitemap on 22 Jun 2026.
+#  Survivor pages with identical paths (/about, /contact, /services,
+#  every /services/<survivor>, every /locations/<town>) are NOT listed
+#  here on purpose: they serve natively. You never redirect a URL to
+#  itself.
+#
+#  [DECISION] lines depend on whether Lee actually offers that trade.
+#  If he does and you build the page, repoint the line at it. If he
+#  does not, leaving it pointed at /services is correct.
+# ============================================================
+
+
+# ------------------------------------------------------------
+#  1. HOST CANONICAL  -  apex -> www   (LOCKED)
+# ------------------------------------------------------------
+https://marshallandco.uk/*   https://www.marshallandco.uk/:splat   301
+
+
+# ------------------------------------------------------------
+#  2. RENAMED PAGES  (old slug -> new slug)
+# ------------------------------------------------------------
+/services/bathrooms   /services/bathroom-renovations   301
+/services/kitchens    /services/kitchen-renovations     301
+/reviews              /testimonials                     301
+/our-work             /gallery                          301
+/gallery/             /gallery                          301
+/areas                /locations                        301
+
+
+# ------------------------------------------------------------
+#  3. OLD  /areas/<town>  ->  /locations/<town>
+#  Explicit for the towns that had real impressions, then a
+#  catch-all to the hub so no stray /areas page can ever 404.
+# ------------------------------------------------------------
+/areas/perth          /locations/perth          301
+/areas/dundee         /locations/dundee         301
+/areas/perthshire     /locations/perthshire     301
+/areas/kinross        /locations/kinross        301
+/areas/crieff         /locations/crieff         301
+/areas/auchterarder   /locations/auchterarder   301
+/areas/blairgowrie    /locations/blairgowrie    301
+/areas/coupar-angus   /locations/coupar-angus   301
+/areas/dunblane       /locations/dunblane       301
+/areas/*              /locations                301
+
+
+# ------------------------------------------------------------
+#  4. SERVICE x LOCATION MATRIX  ->  parent service
+#  One wildcard per service kills every town variant. These do
+#  NOT touch the bare /services/<x> page (nothing after the slash).
+# ------------------------------------------------------------
+/services/decking/*              /services/decking               301
+/services/garden-rooms/*         /services/garden-rooms          301
+/services/loft-conversions/*     /services/loft-conversions      301
+/services/house-extensions/*     /services/house-extensions      301
+/services/garage-conversions/*   /services/garage-conversions    301
+/services/bathrooms/*            /services/bathroom-renovations  301
+/services/kitchens/*             /services/kitchen-renovations   301
+
+
+# ------------------------------------------------------------
+#  5. "-perth" SERVICE VARIANTS  ->  matched or closest survivor
+# ------------------------------------------------------------
+# -- clean matches to a real new service --
+/services/kitchen-fitter-perth              /services/kitchen-renovations    301
+/services/kitchen-worktops-perth            /services/kitchen-renovations    301
+/services/kitchen-cabinet-doors-perth       /services/kitchen-renovations    301
+/services/kitchen-cabinet-installation-perth /services/kitchen-renovations   301
+/services/kitchen-cabinet-refinishing-perth /services/kitchen-renovations    301
+/services/kitchen-design-perth              /services/kitchen-renovations    301
+/services/granite-worktops-perth            /services/kitchen-renovations    301
+/services/outdoor-kitchens-perth            /services/kitchen-renovations    301
+/services/bathroom-fitter-perth             /services/bathroom-renovations   301
+/services/tiling-perth                      /services/bathroom-renovations   301
+/services/garden-office-perth               /services/garden-rooms           301
+/services/garden-building-supplier-perth    /services/garden-rooms           301
+/services/media-wall-with-fireplace-perth   /services/media-walls            301
+/services/deck-builder-perth                /services/decking                301
+/services/deck-repair-perth                 /services/decking                301
+
+# -- no matching service on the new site -> /services hub --
+/services/builder-perth                     /services    301
+/services/home-builder-perth                /services    301
+/services/construction-company-perth        /services    301
+/services/project-management-perth          /services    301
+/services/drywall-installation-perth        /services    301
+/services/flooring-repair-perth             /services    301
+/services/floor-fitting-perth               /services    301
+/services/fitted-wardrobes-perth            /services    301
+/services/staircases-perth                  /services    301
+/services/plumbing-fixture-installation-perth /services  301
+
+# -- [DECISION] trades Lee may or may not actually do --
+/services/roofing-perth      /services/roofing    301   # roofing page now live
+/services/joiner-perth       /services    301   # [DECISION] 6 clicks. If Lee does joinery, build the page.
+/services/carpenter-perth    /services    301   # [DECISION] same trade as joiner.
+/services/landscaping-perth  /services    301   # [DECISION] 194 imp. Closest fallback is /services/decking if you prefer.
+/services/fencing-perth      /services    301   # [DECISION] closest fallback /services/decking.
+
+
+# ------------------------------------------------------------
+#  6. OLD WORDPRESS TRAILING-SLASH SERVICE PAGES
+# ------------------------------------------------------------
+/windows-doors-perth/           /services/windows-doors        301
+/bathroom-renovations-perth/    /services/bathroom-renovations 301
+/kitchen-renovations-perth/     /services/kitchen-renovations  301
+/bedroom-renovations-perth/     /services/home-renovations     301
+/insurance-repair-works-perth/  /services/insurance-repairs    301
+/roofing-perth/                 /services/roofing              301   # roofing page now live
+
+
+# ------------------------------------------------------------
+#  7. BLOG  ->  closest service  (no blog on the new site)
+#  The Scotland loft post pulled 752 impressions; it goes to the
+#  loft service so that demand is not binned.
+# ------------------------------------------------------------
+/blog/loft-conversion-planning-permission-scotland  /services/loft-conversions     301
+/blog/house-extension-cost-perth                    /services/house-extensions     301
+/blog/best-garden-room-ideas-perth                  /services/garden-rooms         301
+/blog/home-office-setup-ideas-perth                 /services/garden-rooms         301
+/blog/bathroom-renovation-ideas-perth               /services/bathroom-renovations 301
+/blog/garage-conversion-ideas-perth                 /services/garage-conversions   301
+/blog/professional-kitchen-installation-vs-diy      /services/kitchen-renovations  301
+/blog/kitchen-showroom-upgrades-worth-the-money     /services/kitchen-renovations  301
+/blog/kitchen-design-tips-perth                     /services/kitchen-renovations  301
+/blog/how-much-does-home-renovation-cost-perth      /services/home-renovations     301
+/blog/how-to-choose-builder-perth                   /services                      301
+/blog/*                                             /services                      301
+/blog                                               /services                      301
+
+
+# ------------------------------------------------------------
+#  8. WORDPRESS CRUFT  (zero SEO value, kill cleanly)
+# ------------------------------------------------------------
+/hello-world-2/   /   301
+/author/*         /   301
+
+
+# ------------------------------------------------------------
+#  9. MISC OLD PAGES
+# ------------------------------------------------------------
+/specials              /services   301
+/kitchen-consultation  /contact    301
+
+# ------------------------------------------------------------
+#  10. LEGAL
+# ------------------------------------------------------------
+# /privacy-policy serves natively (page exists)
+# No /terms-conditions page - omitted intentionally
