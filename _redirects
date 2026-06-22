@@ -98,10 +98,14 @@ https://marshallandco.uk/*   https://www.marshallandco.uk/:splat   301
 
 # -- [DECISION] trades Lee may or may not actually do --
 /services/roofing-perth      /services/roofing    301
-/services/joiner-perth       /services    301   # [DECISION] 6 clicks. If Lee does joinery, build the page.
-/services/carpenter-perth    /services    301   # [DECISION] same trade as joiner.
-/services/landscaping-perth  /services    301   # [DECISION] 194 imp. Closest fallback is /services/decking if you prefer.
-/services/fencing-perth      /services    301   # [DECISION] closest fallback /services/decking.
+# [DECISION] 6 clicks. If Lee does joinery, build the page.
+/services/joiner-perth       /services    301
+# [DECISION] same trade as joiner.
+/services/carpenter-perth    /services    301
+# [DECISION] 194 imp. Closest fallback is /services/decking if you prefer.
+/services/landscaping-perth  /services    301
+# [DECISION] closest fallback /services/decking.
+/services/fencing-perth      /services    301
 
 
 # ------------------------------------------------------------
