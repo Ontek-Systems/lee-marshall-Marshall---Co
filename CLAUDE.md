@@ -99,7 +99,7 @@ Static HTML, Tailwind CSS, vanilla JavaScript. No React, no frameworks, no build
 ## Business Context (Marshall & Co.)
 
 - **Company Name**: Marshall & Co. Bespoke Home Improvements
-- **Owner**: Lee Marshall
+- **Owner**: Owner-led. Never use the owner's personal name on the site; refer to the business as Marshall & Co.
 - **Industry**: Construction, Bespoke Joinery & Home Improvements
 - **Location**: 2 Talisker Place, Perth, PH1 3GW, Scotland
 - **Service Area**: 
@@ -131,7 +131,7 @@ Static HTML, Tailwind CSS, vanilla JavaScript. No React, no frameworks, no build
 - **Email**: info@marshallandco.uk
 - **Credentials**: Over 20 years of industry experience managing specialized joinery and construction projects for a wide range of property types, from traditional sandstone homes to modern new builds.
 - **Service Summary**
-Marshall & Co. Bespoke Home Improvements, led by Lee Marshall, is a premier construction and bespoke joinery firm operating across Perth and the wider Perthshire region. Backed by over two decades of hands-on field experience, the company specializes in executing high-end structural renovations, interior remodeling, and custom carpentry projects tailored to each client's specific property needs.
+Marshall & Co. Bespoke Home Improvements is a premier construction and bespoke joinery firm operating across Perth and the wider Perthshire region. Backed by over two decades of hands-on field experience, the company specializes in executing high-end structural renovations, interior remodeling, and custom carpentry projects tailored to each client's specific property needs.
 
 - **Services**
         -  Home Renovations,
@@ -218,7 +218,7 @@ Replace any `overflow: hidden` version with this.
 
 ## Brand Guidelines & Vibe
   - **Primary font:** Currently **Satoshi** (self-hosted variable font in `assets/fonts/Satoshi/`). Used for all headings and body text site-wide via `--site-font` in `style.css`. To change the font, see "Typography system" section above.
-  - **Accent/script font:** **Elicit Script** - self-hosted `assets/fonts/ElicitScript-SemiBold.otf`. Used ONLY for the Lee Marshall signature. Never apply to body text or headings.
+  - **Accent/script font:** **Elicit Script** - self-hosted `assets/fonts/ElicitScript-SemiBold.otf`. Used ONLY for the Marshall & Co. signature. Never apply to body text or headings.
   - **Overall Vibe:** Luxury, Premium, Bespoke, High-end Craftsmanship.
 
 - **Color Scheme Palette:** (Apply these using Tailwind arbitrary values, e.g., `bg-[#fff9eb]`, `text-[#e8b238]`, or map them to custom CSS variables in style.css):
@@ -281,7 +281,7 @@ See the "Typography system" section above. All sizes/weights are CSS variables i
 
 1. **Hero** - 3-slide content carousel (lerp-free CSS transitions). Slides: Welcome / Craftsmanship / Conversion (form). Background images cycle independently. Animated mouse scroll indicator + slide dots. Timer stops permanently on slide 3 or form focus.
 2. **Trust Banner** - scrolling ticker of service keywords (marquee animation)
-3. **About** - parallax background image, two-column text + floating portrait image (desktop), stat counters (20+ years, 5-Star, 100% personally led), Lee Marshall script signature with underline
+3. **About** - parallax background image, two-column text + floating portrait image (desktop), stat counters (20+ years, 5-Star, 100% personally led), Marshall & Co. script signature with underline
 4. **Gallery** (`#gallery-snippet`) - sticky lerp-scroll card carousel, mirrors Process section layout. Dark bg, fade gradients, dots, "View Full Gallery" button. Cards reference `all_imgs/` WhatsApp photos.
 5. **Services** (`#services-section`) - 4 alternating full-width rows (image + text), parallax on images, section number 03, sub-cards numbered 01–04 internally
 6. **Inspiration** (`#inspiration-banner-section`) - full-bleed bg image with parallax, frosted glass card anchored right, section number 04

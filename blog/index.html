@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Blog &amp; Renovation Advice | Marshall &amp; Co. Bespoke Home Improvements</title>
+    <meta name="description" content="Practical advice, planning guidance and design thinking on extensions, loft conversions and bespoke joinery across Perth and Perthshire, from Marshall & Co." />
+
+    <link rel="stylesheet" href="/fonts.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/tailwind.css">
+    <link rel="stylesheet" href="/blog/_post-styles.css">
+
+    <style>
+      /* Word-mask reveal animation */
+      .word-mask { display: inline-block; vertical-align: bottom; clip-path: inset(-80% -20% 0% -20%); padding-bottom: 0.25em; margin-bottom: -0.25em; }
+      .word-mask-inner { display: inline-block; transform: translateY(110%); transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); will-change: transform; }
+      h1 .word-mask-inner, h2 .word-mask-inner, h3 .word-mask-inner { transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) !important; }
+      .reveal.active .word-mask-inner { transform: translateY(0); }
+      .title-underline-anim { opacity: 0; }
+      .reveal.active .title-underline-anim { animation: revealUnderline 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 500ms forwards; }
+      @keyframes revealUnderline { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+      .btn-primary {
+        background-color: #e8b238 !important;
+        color: #ffffff !important;
+        border-color: transparent !important;
+        width: auto !important;
+      }
+      .btn-primary:hover {
+        background-color: #000000 !important;
+        border-color: transparent !important;
+        color: #ffffff !important;
+      }
+
+      /* --- Blog cards (UI component sizing, independent of global heading scale) --- */
+      .bl-card {
+        display: flex; flex-direction: column; height: 100%;
+        background: #ffffff;
+        border: 1px solid rgba(48,48,48,0.10);
+        text-decoration: none;
+        transition: transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94), box-shadow 0.4s ease, border-color 0.4s ease;
+      }
+      .bl-card:hover { transform: translateY(-6px); box-shadow: 0 24px 50px rgba(48,48,48,0.14); border-color: rgba(232,178,56,0.55); }
+      .bl-media { position: relative; overflow: hidden; aspect-ratio: 16 / 10; }
+      .bl-media img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94); }
+      .bl-card:hover .bl-media img { transform: scale(1.07); }
+      .bl-cat {
+        position: absolute; top: 1rem; left: 1rem;
+        background: #e8b238; color: #ffffff;
+        font-size: 0.62rem !important; font-weight: 700;
+        letter-spacing: 0.18em; text-transform: uppercase;
+        padding: 0.45rem 0.85rem;
+      }
+      .bl-body { padding: 2rem 2rem 2.25rem; display: flex; flex-direction: column; flex: 1; }
+      .bl-meta {
+        font-size: 0.68rem !important; font-weight: 600; letter-spacing: 0.2em;
+        text-transform: uppercase; color: rgba(48,48,48,0.45); margin-bottom: 1rem;
+      }
+      .bl-title {
+        font-family: var(--site-font), sans-serif !important;
+        text-transform: uppercase; letter-spacing: -0.005em;
+        font-size: 1.45rem !important; font-weight: 800; line-height: 1.2;
+        color: #303030; margin-bottom: 0.9rem;
+        transition: color 0.3s ease;
+      }
+      .bl-card:hover .bl-title { color: #5b4a36; }
+      .bl-excerpt { font-size: 1rem !important; font-weight: 400; line-height: 1.7; color: rgba(48,48,48,0.72); margin-bottom: 1.75rem; flex: 1; }
+      .bl-read {
+        font-size: 0.72rem !important; font-weight: 700; letter-spacing: 0.2em;
+        text-transform: uppercase; color: #e8b238;
+        display: inline-flex; align-items: center; gap: 0.6rem; margin-top: auto;
+      }
+      .bl-read svg { transition: transform 0.35s ease; }
+      .bl-card:hover .bl-read svg { transform: translateX(6px); }
+
+      /* Featured post */
+      .bl-featured { display: grid; grid-template-columns: 1fr; background: #303030; border: 1px solid rgba(255,255,255,0.08); text-decoration: none; overflow: hidden; }
+      @media (min-width: 1024px) { .bl-featured { grid-template-columns: 1.05fr 1fr; } }
+      .bl-featured .bl-media { aspect-ratio: 16 / 11; height: 100%; }
+      @media (min-width: 1024px) { .bl-featured .bl-media { aspect-ratio: auto; min-height: 100%; } }
+      .bl-featured .bl-media img { display: block; }
+      .bl-featured:hover .bl-media img { transform: scale(1.06); }
+      .bl-featured-body { padding: 2.5rem; display: flex; flex-direction: column; justify-content: center; }
+      @media (min-width: 1024px) { .bl-featured-body { padding: 4rem 3.5rem; } }
+      .bl-featured-title { font-family: var(--site-font), sans-serif !important; text-transform: uppercase; letter-spacing: -0.005em; font-size: clamp(1.8rem, 2.6vw, 2.5rem) !important; font-weight: 800; line-height: 1.2; color: #ffffff; margin-bottom: 1.1rem; }
+      .bl-featured-excerpt { font-size: 1.1rem !important; font-weight: 400; line-height: 1.75; color: rgba(255,255,255,0.78); margin-bottom: 2rem; }
+
+      /* Topic chips */
+      .bl-topic {
+        border: 1px solid rgba(48,48,48,0.14); background: #ffffff;
+        padding: 0.7rem 1.35rem;
+        font-size: 0.72rem !important; font-weight: 700; letter-spacing: 0.18em;
+        text-transform: uppercase; color: rgba(48,48,48,0.72);
+        transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+      }
+      .bl-topic:hover { background: #e8b238; color: #ffffff; border-color: #e8b238; }
+    </style>
+
+    <!-- Favicon & App Icons -->
+    <link rel="icon" href="/assets/imgs/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="/assets/imgs/favicon.png">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Blog",
+          "@id": "https://www.marshallandco.uk/blog#blog",
+          "url": "https://www.marshallandco.uk/blog",
+          "name": "The Marshall & Co. Blog",
+          "description": "Practical advice, planning guidance and design thinking on extensions, loft conversions and bespoke joinery across Perth and Perthshire.",
+          "isPartOf": { "@id": "https://www.marshallandco.uk/#website" },
+          "publisher": { "@id": "https://www.marshallandco.uk/#business" },
+          "inLanguage": "en-GB"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://www.marshallandco.uk/blog#breadcrumb",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.marshallandco.uk/" },
+            { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.marshallandco.uk/blog" }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body class="flex flex-col min-h-screen antialiased bg-[#fff9eb] text-[#303030]">
+
+    <div id="header-placeholder"></div>
+
+    <main>
+
+        <!-- HERO -->
+        <section class="relative pt-[210px] pb-20 sm:pt-[220px] md:pt-[230px] md:pb-32 lg:pt-[240px] flex items-center justify-center overflow-hidden" style="background:#303030;">
+
+            <div class="absolute inset-0 z-0 pointer-events-none">
+                <img src="/assets/imgs/service_imgs/home_extensions/home_extensions_1.jpeg" width="2048" height="1536"
+                    alt="Bespoke home extension craftsmanship by Marshall &amp; Co. in Perthshire"
+                    class="absolute inset-0 w-full h-full object-cover opacity-15"
+                    style="filter: saturate(0.5) brightness(0.4);">
+                <div class="absolute inset-0 bg-gradient-to-b from-[#303030]/45 via-[#303030]/32 to-[#303030]/48"></div>
+            </div>
+
+            <div class="w-full max-w-[98rem] mx-auto px-4 sm:px-6 lg:px-10 relative z-20 text-center text-white reveal flex flex-col items-center">
+
+                <span class="word-mask-inner inline-block section-tagline eyebrow-chapter cursor-default" style="transition-delay:50ms; display:inline-flex; align-items:center; gap:10px; font-weight:500; font-size:0.77rem !important; margin-bottom:1.5rem;"><span class="eyebrow-gold" style="color:var(--gs-accent); letter-spacing:0;">01</span><span class="eyebrow-gold" style="color:var(--gs-accent); letter-spacing:0;">/</span><span class="eyebrow-label" style="letter-spacing:0.25em; color:rgba(255,255,255,0.65);">The Blog</span></span>
+
+                <h1 class="section-heading blog-title text-white justify-center" style="font-weight:800; margin-top:0; margin-bottom:1.275rem !important;">
+                    <span class="word-mask"><span class="word-mask-inner" style="transition-delay:100ms;">Insight From The Workshop</span></span>
+                </h1>
+
+                <p class="title-underline-anim font-body leading-relaxed" style="animation-delay:500ms; font-size:1.1rem !important; font-weight:400; color:rgba(255,255,255,0.78); max-width:42rem; margin:0 auto;">
+                    Two decades of building across Perthshire, written down. Honest guidance on planning, budgeting and detailing the work that changes how a home lives.
+                </p>
+
+            </div>
+
+            <div class="absolute bottom-0 left-0 right-0" style="height:6px; background:#e8b238;"></div>
+        </section>
+
+        <!-- FEATURED ARTICLE -->
+        <section class="relative py-20 md:py-32" style="background:#fff9eb;">
+            <div class="w-full max-w-[96rem] mx-auto px-4 sm:px-8 lg:px-12">
+
+                <div class="mb-12 md:mb-20 reveal text-center flex flex-col items-center">
+                    <span class="word-mask-inner inline-block section-tagline eyebrow-chapter cursor-default" style="transition-delay:50ms; display:inline-flex; align-items:center; gap:10px; font-weight:500; font-size:0.77rem !important; margin-bottom:1.5rem;"><span class="eyebrow-gold" style="color:var(--gs-accent); letter-spacing:0;">02</span><span class="eyebrow-gold" style="color:var(--gs-accent); letter-spacing:0;">/</span><span class="eyebrow-label" style="letter-spacing:0.25em; color:rgba(48,48,48,0.65);">Featured</span></span>
+                    <h2 class="section-heading blog-h2 text-[#303030] justify-center items-center text-center w-full" style="font-weight:800; margin-top:0; margin-bottom:1.275rem !important;">
+                        <span class="flex flex-wrap justify-center gap-x-3 lg:gap-x-4 leading-tight">
+                            <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 100ms;">This</span></span>
+                            <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 200ms;">Month's</span></span>
+                            <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 300ms;">Read</span></span>
+                        </span>
+                    </h2>
+                    <p class="title-underline-anim font-body leading-relaxed" style="animation-delay:500ms; font-size:1.1rem !important; font-weight:400; color:rgba(48,48,48,0.80); max-width:42rem; margin:0 auto;">The piece we point clients to most often before a project begins. Read it before you speak to any builder in Perthshire.</p>
+                </div>
+
+                <article class="reveal reveal-up">
+                    <a href="/blog/planning-permission-building-warrants-perthshire" class="bl-featured group" aria-label="Read the featured article: Do You Need a Building Warrant in Perthshire?">
+                        <div class="bl-media">
+                            <img src="/assets/imgs/service_imgs/home_extensions/home_extensions_10.jpeg" width="1400" height="1050"
+                                 alt="Completed bespoke house extension by Marshall &amp; Co. in Perth" loading="lazy">
+                            <span class="bl-cat">Featured</span>
+                        </div>
+                        <div class="bl-featured-body">
+                            <p class="bl-meta" style="color:rgba(255,255,255,0.45);">20 August 2026 &nbsp;&middot;&nbsp; 9 min read</p>
+                            <h3 class="bl-featured-title">Do You Need a Building Warrant in Perthshire?</h3>
+                            <p class="bl-featured-excerpt">Planning permission and a building warrant are two different things, and most folk only find that out halfway through a job. What needs one, what does not, whose responsibility it actually is, and why the completion certificate matters more than anyone tells you.</p>
+                            <span class="bl-read" style="color:#e8b238;">Read the article
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                            </span>
+                        </div>
+                    </a>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- LATEST ARTICLES -->
+        <section class="relative py-20 md:py-32 bg-white">
+            <div class="w-full max-w-[96rem] mx-auto px-4 sm:px-8 lg:px-12">
+
+                <div class="mb-12 md:mb-20 reveal text-center flex flex-col items-center">
+                    <span class="word-mask-inner inline-block section-tagline eyebrow-chapter cursor-default" style="transition-delay:50ms; display:inline-flex; align-items:center; gap:10px; font-weight:500; font-size:0.77rem !important; margin-bottom:1.5rem;"><span class="eyebrow-gold" style="color:var(--gs-accent); letter-spacing:0;">03</span><span class="eyebrow-gold" style="color:var(--gs-accent); letter-spacing:0;">/</span><span class="eyebrow-label" style="letter-spacing:0.25em; color:rgba(48,48,48,0.65);">Latest</span></span>
+                    <h2 class="section-heading blog-h2 text-[#303030] justify-center items-center text-center w-full" style="font-weight:800; margin-top:0; margin-bottom:1.275rem !important;">
+                        <span class="flex flex-wrap justify-center gap-x-3 lg:gap-x-4 leading-tight">
+                            <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 100ms;">Recent</span></span>
+                            <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 200ms;">Articles</span></span>
+                        </span>
+                    </h2>
+                    <p class="title-underline-anim font-body leading-relaxed" style="animation-delay:500ms; font-size:1.1rem !important; font-weight:400; color:rgba(48,48,48,0.80); max-width:42rem; margin:0 auto;">Written between site visits, drawn from real projects across Perth, Dundee and the wider Perthshire region.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 reveal reveal-up">
+
+                    <!-- Post 1 -->
+                    <article>
+                        <a href="/blog/renovating-sandstone-homes-perth" class="bl-card" aria-label="Read: Renovating a Traditional Sandstone Home in Perth">
+                            <div class="bl-media">
+                                <img src="/assets/imgs/general_imgs/about_bg.jpg" width="1400" height="1050"
+                                     alt="Traditional sandstone property renovated by Marshall &amp; Co. in Perth" loading="lazy">
+                                <span class="bl-cat">Traditional Homes</span>
+                            </div>
+                            <div class="bl-body">
+                                <p class="bl-meta">20 August 2026 &nbsp;&middot;&nbsp; 8 min read</p>
+                                <h3 class="bl-title">Renovating a Traditional Sandstone Home in Perth</h3>
+                                <p class="bl-excerpt">Most of the damp we get called out to in old Perth properties was not there when the house was built. Cement pointing, sealed render and badly detailed insulation all cause it. Here is how a solid stone wall is meant to work, and how to renovate one without doing damage.</p>
+                                <span class="bl-read">Read more
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                                </span>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Post 2 -->
+                    <article>
+                        <a href="/contact" class="bl-card" aria-label="Coming soon: Why Bespoke Joinery Outlasts a Flat Pack Kitchen">
+                            <div class="bl-media">
+                                <img src="/assets/imgs/service_imgs/kitchen_renovations/kitchen_renovations_1.jpeg" width="1400" height="1050"
+                                     alt="Bespoke fitted kitchen joinery by Marshall &amp; Co. in Perthshire" loading="lazy">
+                                <span class="bl-cat">Joinery</span>
+                            </div>
+                            <div class="bl-body">
+                                <p class="bl-meta">Coming Soon &nbsp;&middot;&nbsp; 7 min read</p>
+                                <h3 class="bl-title">Why Bespoke Joinery Outlasts a Flat Pack Kitchen</h3>
+                                <p class="bl-excerpt">A fitted kitchen is judged on the millimetre. We look at carcass construction, scribing to an uneven sandstone wall, and the hardware choices that separate a kitchen still closing softly in fifteen years from one that sags inside three.</p>
+                                <span class="bl-read">Read more
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                                </span>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- More coming soon -->
+                    <article>
+                        <div class="bl-card" style="background:#fff9eb; border-style:dashed; align-items:center; justify-content:center; text-align:center; padding:3rem 2rem; min-height:20rem;">
+                            <span class="bl-meta" style="margin-bottom:1.25rem;">In Progress</span>
+                            <h3 class="bl-title" style="margin-bottom:0.9rem;">More Articles On The Bench</h3>
+                            <p class="bl-excerpt" style="flex:0; margin-bottom:2rem;">New pieces are written as projects complete. If there is something you want covered, tell us and we will write it properly.</p>
+                            <a href="/contact" class="bl-read" style="margin-top:0;">Suggest a topic
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                            </a>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="/global.js"></script>
+
+</body>
+</html>

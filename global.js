@@ -55,10 +55,23 @@ document.addEventListener('DOMContentLoaded', async () => {
         rootMargin: "0px 0px -50px 0px"
     });
 
+    // Elements taller than the viewport can never reach a 0.1 threshold, so they
+    // get their own observer that fires as soon as any part of them is on screen.
+    const tallObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { root: null, threshold: 0 });
+
     revealElements.forEach(el => {
         const rect = el.getBoundingClientRect();
         if (rect.top < window.innerHeight && rect.bottom > 0) {
             el.classList.add('active');
+        } else if (rect.height > window.innerHeight * 0.9) {
+            tallObserver.observe(el);
         } else {
             revealObserver.observe(el);
         }
@@ -136,7 +149,7 @@ function initHeaderScroll() {
             return;
         }
 
-        if (window.location.pathname.includes('/contact') || window.location.pathname.includes('/testimonials') || window.location.pathname.includes('/gallery') || window.location.pathname.includes('/about') || window.location.pathname.includes('/services') || window.location.pathname.includes('/locations')) {
+        if (window.location.pathname.includes('/contact') || window.location.pathname.includes('/testimonials') || window.location.pathname.includes('/gallery') || window.location.pathname.includes('/about') || window.location.pathname.includes('/services') || window.location.pathname.includes('/locations') || window.location.pathname.includes('/blog')) {
             const banner = document.getElementById('top-banner');
             header.classList.add('scrolled');
             header.classList.remove('bg-transparent', 'border-transparent');

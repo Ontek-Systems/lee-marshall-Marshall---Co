@@ -2,7 +2,7 @@
 <!--
   Sitemap for Marshall & Co. Bespoke Home Improvements
   https://www.marshallandco.uk/
-  42 indexable URLs (1 homepage, 6 hub pages, 12 service pages, 23 location pages).
+  41 indexable URLs (1 homepage, 6 hub pages, 11 service pages, 23 location pages).
   Excludes noindex pages (/thank-you and /process_form).
   URLs match each page's declared rel=canonical exactly.
   Priority scale: homepage 1.0 > primary hubs/conversion 0.9 > services 0.8 >
@@ -123,12 +123,6 @@
   <url>
     <loc>https://www.marshallandco.uk/services/insurance-repairs</loc>
     <lastmod>2026-06-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.marshallandco.uk/services/roofing</loc>
-    <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -275,4 +269,7 @@
     <priority>0.7</priority>
   </url>
 
+  <url><loc>https://www.marshallandco.uk/blog</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.marshallandco.uk/blog/planning-permission-building-warrants-perthshire</loc><lastmod>2026-08-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.marshallandco.uk/blog/renovating-sandstone-homes-perth</loc><lastmod>2026-08-20</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>

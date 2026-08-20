@@ -10,7 +10,7 @@
 
 ## 2. Business Context
 - **Company**: Marshall & Co. Bespoke Home Improvements
-- **Owner**: Lee Marshall (100% owner-led, no subcontractors, on site every day)
+- **Owner**: Marshall & Co. is owner-led (no subcontractors, on site every day). Do not use the owner's personal name anywhere on the site.
 - **Vibe/Tone**: Luxury, premium, bespoke, high-end craftsmanship.
 - **Industry**: Construction, Bespoke Joinery & Home Improvements.
 - **Location**: 2 Talisker Place, Perth, PH1 3GW, Scotland
@@ -39,7 +39,7 @@ Defined via Tailwind `@theme` in HTML files and CSS variables in `style.css`.
 - **Typography:**
   - **Headings** (`font-heading`): `'Cormorant'` (Self-hosted in `assets/fonts/Cormorant/`). Token: `--font-heading: 'Cormorant', Georgia, serif`.
   - **Body** (`font-body`): `'Montserrat'` (Google Fonts CDN). Token: `--font-body: 'Montserrat', sans-serif`.
-  - **Script/Accent** (`font-script`): `'Elicit Script'` (Self-hosted). Used exclusively for section kickers and Lee's signature. Token: `--font-script: 'Elicit Script', cursive`.
+  - **Script/Accent** (`font-script`): `'Elicit Script'` (Self-hosted). Used exclusively for section kickers and the Marshall & Co. signature. Token: `--font-script: 'Elicit Script', cursive`.
 - **Global Dark Mode:** Appending `.section-dark` to a `<section>` automatically flips CSS variables (`--gs-fg`, `--gs-bg`, button states) for dark sections.
 
 ## 5. UI Components & Button System

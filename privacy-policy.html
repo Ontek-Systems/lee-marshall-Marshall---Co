@@ -1,182 +1,202 @@
 <!DOCTYPE html>
 <html lang="en-GB" class="scroll-smooth">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy | Marshall & Co. Bespoke Home Improvements | Perth</title>
-  <meta name="description" content="Privacy Policy for Marshall & Co. Bespoke Home Improvements. We only use your information to get back to you about your project." />
-  <meta name="robots" content="noindex, follow" />
-  <link rel="canonical" href="https://www.marshallandco.uk/privacy-policy" />
-  <link rel="icon" href="/assets/imgs/favicon.png" type="image/png">
-  <link rel="apple-touch-icon" href="/assets/imgs/favicon.png">
-  <link rel="stylesheet" href="/fonts.css">
-  <link rel="stylesheet" href="/style.css">
-  <link rel="stylesheet" href="/tailwind.css">
-  <style>
-    .btn-primary {
-      background-color: #e8b238 !important;
-      color: #ffffff !important;
-      border-color: transparent !important;
-      width: auto !important;
-    }
-    .btn-primary:hover {
-      background-color: #000000 !important;
-      border-color: transparent !important;
-      color: #ffffff !important;
-    }
-  </style>
-</head>
-<body class="flex flex-col min-h-screen antialiased overflow-x-hidden">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <div id="header-placeholder"></div>
+    <title>Privacy Policy | Marshall &amp; Co. Bespoke Home Improvements</title>
+    <meta name="description" content="How Marshall &amp; Co. Bespoke Home Improvements collects and uses the name, phone number and email address you provide through our contact form." />
+    <link rel="canonical" href="https://www.marshallandco.uk/privacy-policy" />
 
-  <main>
+    <link rel="stylesheet" href="/fonts.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/tailwind.css">
 
     <style>
+      /* Word-mask reveal animation */
       .word-mask { display: inline-block; vertical-align: bottom; clip-path: inset(-80% -20% 0% -20%); padding-bottom: 0.25em; margin-bottom: -0.25em; }
       .word-mask-inner { display: inline-block; transform: translateY(110%); transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); will-change: transform; }
-      h1 .word-mask-inner, h2 .word-mask-inner { transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) !important; }
+      h1 .word-mask-inner, h2 .word-mask-inner, h3 .word-mask-inner { transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) !important; }
       .reveal.active .word-mask-inner { transform: translateY(0); }
       .title-underline-anim { opacity: 0; }
       .reveal.active .title-underline-anim { animation: revealUnderline 0.8s cubic-bezier(0.2, 0.8, 0.2, 1) 500ms forwards; }
       @keyframes revealUnderline { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-      .policy-section h2 {
-        font-family: var(--site-font, sans-serif);
-        font-size: 1.25rem !important;
-        font-weight: 700;
-        color: #303030;
-        margin-top: 2.5rem;
-        margin-bottom: 0.75rem;
+      /* --- Policy blocks (UI component sizing, independent of global heading scale) --- */
+      .pp-block {
+        background: #ffffff;
+        border: 1px solid rgba(48,48,48,0.10);
+        padding: 2.25rem 2rem;
       }
-      .policy-section p {
-        font-size: 1.05rem !important;
-        color: rgba(48,48,48,0.80);
-        line-height: 1.75;
-        margin-bottom: 1rem;
+      @media (min-width: 768px) { .pp-block { padding: 2.75rem 3rem; } }
+      .pp-num {
+        font-size: 0.68rem !important; font-weight: 700; letter-spacing: 0.22em;
+        text-transform: uppercase; color: #e8b238; display: block; margin-bottom: 0.9rem;
       }
-      .policy-section ul {
-        list-style: disc;
-        padding-left: 1.5rem;
-        margin-bottom: 1rem;
+      .pp-title { font-size: 1.5rem !important; font-weight: 700; line-height: 1.25; color: #303030; margin-bottom: 1rem; }
+      .pp-text { font-size: 1.05rem !important; font-weight: 400; line-height: 1.75; color: rgba(48,48,48,0.78); }
+      .pp-text + .pp-text { margin-top: 1rem; }
+      .pp-list { list-style: none; margin-top: 1.25rem; display: flex; flex-direction: column; gap: 0.75rem; }
+      .pp-list li {
+        font-size: 1.05rem !important; font-weight: 400; line-height: 1.7; color: rgba(48,48,48,0.78);
+        display: flex; align-items: flex-start; gap: 0.85rem;
       }
-      .policy-section ul li {
-        font-size: 1.05rem !important;
-        color: rgba(48,48,48,0.80);
-        line-height: 1.75;
-        margin-bottom: 0.35rem;
+      .pp-list li::before {
+        content: ""; flex: none; width: 6px; height: 6px; border-radius: 50%;
+        background: #e8b238; margin-top: 0.65rem;
       }
-      .policy-divider {
-        height: 1px;
-        background: rgba(48,48,48,0.10);
-        margin: 2rem 0;
-      }
+      .pp-link { color: #303030; font-weight: 600; text-decoration: underline; text-underline-offset: 4px; text-decoration-color: #e8b238; transition: color 0.3s ease; }
+      .pp-link:hover { color: #e8b238; }
     </style>
 
-    <!-- HERO -->
-    <section class="relative pt-[210px] pb-20 sm:pt-[220px] md:pt-[230px] md:pb-28 flex items-center justify-center overflow-hidden" style="background:#303030;">
-      <div class="absolute inset-0 z-0 pointer-events-none">
-        <div class="absolute inset-0 bg-gradient-to-b from-[#303030]/70 via-[#303030]/55 to-[#303030]/70"></div>
-      </div>
-      <div class="w-full max-w-[98rem] mx-auto px-4 sm:px-6 lg:px-10 relative z-20 text-center text-white reveal flex flex-col items-center">
-        <span class="word-mask-inner inline-block section-tagline eyebrow-chapter cursor-default" style="transition-delay:50ms; display:inline-flex; align-items:center; gap:10px; font-weight:500; font-size:0.77rem !important; margin-bottom:1.5rem;">
-          <span class="eyebrow-gold" style="color:var(--gs-accent); letter-spacing:0;">01</span>
-          <span class="eyebrow-gold" style="color:var(--gs-accent); letter-spacing:0;">/</span>
-          <span class="eyebrow-label" style="letter-spacing:0.25em; color:rgba(255,255,255,0.65);">Legal</span>
-        </span>
-        <h1 class="section-heading text-white justify-center" style="font-size:clamp(2.54rem, 4.07vw, 3.63rem) !important; font-weight:700; margin-top:0; margin-bottom:1.275rem !important;">
-          <span class="word-mask"><span class="word-mask-inner" style="transition-delay:100ms;">Privacy Policy</span></span>
-        </h1>
-        <p class="title-underline-anim font-body leading-relaxed" style="animation-delay:500ms; font-size:1.1rem !important; font-weight:400; color:rgba(255,255,255,0.78); max-width:42rem; margin:0 auto;">
-          A plain-English explanation of how we handle your information. Short version: we only use it to get back to you.
-        </p>
-      </div>
-      <div class="absolute bottom-0 left-0 right-0" style="height:6px; background:#e8b238;"></div>
-    </section>
+    <!-- Favicon & App Icons -->
+    <link rel="icon" href="/assets/imgs/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="/assets/imgs/favicon.png">
 
-    <!-- POLICY CONTENT -->
-    <section class="relative py-16 lg:py-24 flex justify-center" style="background:#ffffff;">
-      <div class="w-full max-w-[52rem] mx-auto px-4 sm:px-8 lg:px-6 reveal policy-section">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "@id": "https://www.marshallandco.uk/privacy-policy#webpage",
+          "url": "https://www.marshallandco.uk/privacy-policy",
+          "name": "Privacy Policy | Marshall & Co. Bespoke Home Improvements",
+          "description": "How Marshall & Co. Bespoke Home Improvements collects and uses the name, phone number and email address you provide through our contact form.",
+          "isPartOf": { "@id": "https://www.marshallandco.uk/#website" },
+          "publisher": { "@id": "https://www.marshallandco.uk/#business" },
+          "inLanguage": "en-GB"
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://www.marshallandco.uk/privacy-policy#breadcrumb",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.marshallandco.uk/" },
+            { "@type": "ListItem", "position": 2, "name": "Privacy Policy", "item": "https://www.marshallandco.uk/privacy-policy" }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
 
-        <p class="font-body" style="font-size:0.92rem !important; color:rgba(48,48,48,0.50); margin-bottom:2rem;">
-          Last updated: June 2026
-        </p>
+<body class="flex flex-col min-h-screen antialiased bg-[#fff9eb] text-[#303030]">
 
-        <p>Marshall & Co. Bespoke Home Improvements takes your privacy seriously. This page explains what information we collect when you contact us, how we use it, and how long we hold it. There are no hidden surprises.</p>
+    <div id="header-placeholder"></div>
 
-        <div class="policy-divider"></div>
+    <main>
 
-        <h2>Who We Are</h2>
-        <p>Marshall & Co. Bespoke Home Improvements is a sole trader business operated by Lee Marshall, based at 2 Talisker Place, Perth, PH1 3GW, Scotland. You can reach us at <a href="mailto:info@marshallandco.uk" class="font-bold underline underline-offset-4 decoration-[#e8b238] hover:text-[#e8b238] transition-colors duration-200" style="color:#303030;">info@marshallandco.uk</a> or on <a href="tel:07940568877" class="font-bold underline underline-offset-4 decoration-[#e8b238] hover:text-[#e8b238] transition-colors duration-200" style="color:#303030;">07940 568877</a>.</p>
+        <!-- HERO -->
+        <section class="relative pt-[210px] pb-20 sm:pt-[220px] md:pt-[230px] md:pb-32 lg:pt-[240px] flex items-center justify-center overflow-hidden" style="background:#303030;">
 
-        <div class="policy-divider"></div>
+            <div class="absolute inset-0 z-0 pointer-events-none">
+                <img src="/assets/imgs/service_imgs/home_extensions/home_extensions_1.jpeg" width="2048" height="1536"
+                    alt="Bespoke joinery and structural renovation work by Marshall &amp; Co. in Perthshire"
+                    class="absolute inset-0 w-full h-full object-cover opacity-15"
+                    style="filter: saturate(0.5) brightness(0.4);">
+                <div class="absolute inset-0 bg-gradient-to-b from-[#303030]/45 via-[#303030]/32 to-[#303030]/48"></div>
+            </div>
 
-        <h2>What Information We Collect</h2>
-        <p>We only collect information you choose to give us. This typically happens when you:</p>
-        <ul>
-          <li>Fill in a contact or quote request form on this website</li>
-          <li>Send us an email directly</li>
-          <li>Call us or leave a voicemail</li>
-          <li>Message us on Facebook</li>
-        </ul>
-        <p>The information you provide may include your name, phone number, email address, and details about your property or project. We do not collect any payment information through this website.</p>
+            <div class="w-full max-w-[98rem] mx-auto px-4 sm:px-6 lg:px-10 relative z-20 text-center text-white reveal flex flex-col items-center">
 
-        <div class="policy-divider"></div>
+                <span class="word-mask-inner inline-block section-tagline eyebrow-chapter cursor-default" style="transition-delay:50ms; display:inline-flex; align-items:center; gap:10px; font-weight:500; font-size:0.77rem !important; margin-bottom:1.5rem;"><span class="eyebrow-gold" style="color:var(--gs-accent); letter-spacing:0;">01</span><span class="eyebrow-gold" style="color:var(--gs-accent); letter-spacing:0;">/</span><span class="eyebrow-label" style="letter-spacing:0.25em; color:rgba(255,255,255,0.65);">Legal</span></span>
 
-        <h2>How We Use Your Information</h2>
-        <p>We use your information for one purpose: to respond to your enquiry and discuss your project with you. Specifically, that means:</p>
-        <ul>
-          <li>Contacting you to arrange a site visit or consultation</li>
-          <li>Sending you a quote or estimate based on your requirements</li>
-          <li>Following up on an ongoing project</li>
-        </ul>
-        <p>We do not send marketing emails. We do not pass your details to third parties. We do not use your information for any purpose beyond managing your enquiry and, if applicable, delivering your project.</p>
+                <h1 class="section-heading text-white justify-center" style="font-size:clamp(2.54rem, 4.07vw, 3.63rem) !important; font-weight:700; margin-top:0; margin-bottom:1.275rem !important;">
+                    <span class="word-mask"><span class="word-mask-inner" style="transition-delay:100ms;">Privacy Policy</span></span>
+                </h1>
 
-        <div class="policy-divider"></div>
+                <p class="title-underline-anim font-body leading-relaxed" style="animation-delay:500ms; font-size:1.1rem !important; font-weight:400; color:rgba(255,255,255,0.78); max-width:42rem; margin:0 auto;">
+                    We keep this simple. The only details we hold are the ones you give us so we can talk to you about your project, and we never pass them on to anyone else.
+                </p>
 
-        <h2>How Long We Keep Your Information</h2>
-        <p>If your enquiry leads to a project, we will keep your contact details and project records for as long as is reasonably necessary for warranty, insurance, and legal purposes. If your enquiry does not proceed, we do not retain your details beyond the period needed to close the conversation.</p>
+            </div>
 
-        <div class="policy-divider"></div>
+            <div class="absolute bottom-0 left-0 right-0" style="height:6px; background:#e8b238;"></div>
+        </section>
 
-        <h2>Your Rights</h2>
-        <p>Under UK data protection law, you have the right to:</p>
-        <ul>
-          <li>Ask what information we hold about you</li>
-          <li>Request that we correct any inaccurate information</li>
-          <li>Ask us to delete your information</li>
-          <li>Object to us processing your information</li>
-        </ul>
-        <p>To exercise any of these rights, simply contact us directly at <a href="mailto:info@marshallandco.uk" class="font-bold underline underline-offset-4 decoration-[#e8b238] hover:text-[#e8b238] transition-colors duration-200" style="color:#303030;">info@marshallandco.uk</a>. We will respond promptly.</p>
+        <!-- POLICY -->
+        <section class="relative py-20 md:py-32" style="background:#fff9eb;">
+            <div class="w-full max-w-[58rem] mx-auto px-4 sm:px-8 lg:px-12">
 
-        <div class="policy-divider"></div>
+                <div class="mb-12 md:mb-16 reveal text-center flex flex-col items-center">
+                    <span class="word-mask-inner inline-block section-tagline eyebrow-chapter cursor-default" style="transition-delay:50ms; display:inline-flex; align-items:center; gap:10px; font-weight:500; font-size:0.77rem !important; margin-bottom:1.5rem;"><span class="eyebrow-gold" style="color:var(--gs-accent); letter-spacing:0;">02</span><span class="eyebrow-gold" style="color:var(--gs-accent); letter-spacing:0;">/</span><span class="eyebrow-label" style="letter-spacing:0.25em; color:rgba(48,48,48,0.65);">How We Handle Your Details</span></span>
+                    <h2 class="section-heading text-[#303030] justify-center items-center text-center w-full" style="font-size:clamp(2.54rem, 4.07vw, 3.63rem) !important; font-weight:700; margin-top:0; margin-bottom:1.275rem !important;">
+                        <span class="flex flex-wrap justify-center gap-x-3 lg:gap-x-4 leading-tight">
+                            <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 100ms;">Straightforward</span></span>
+                            <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 200ms;">And</span></span>
+                            <span class="word-mask"><span class="word-mask-inner" style="transition-delay: 300ms;">Honest</span></span>
+                        </span>
+                    </h2>
+                    <p class="title-underline-anim font-body leading-relaxed" style="animation-delay:500ms; font-size:1.1rem !important; font-weight:400; color:rgba(48,48,48,0.80); max-width:42rem; margin:0 auto;">
+                        Marshall &amp; Co. Bespoke Home Improvements, 2 Talisker Place, Perth, PH1 3GW. Last updated 20 August 2026.
+                    </p>
+                </div>
 
-        <h2>Cookies and Analytics</h2>
-        <p>This website does not use tracking cookies or third-party analytics platforms. No information about your browsing behaviour is collected or shared.</p>
+                <div class="flex flex-col gap-6 md:gap-8">
 
-        <div class="policy-divider"></div>
+                    <article class="pp-block reveal reveal-up">
+                        <span class="pp-num">01 / What We Collect</span>
+                        <h3 class="pp-title">The Information You Send Us</h3>
+                        <p class="pp-text">When you fill in our contact form, we collect only the details you choose to type into it. That is normally:</p>
+                        <ul class="pp-list">
+                            <li>Your name</li>
+                            <li>Your phone number</li>
+                            <li>Your email address</li>
+                            <li>Anything you tell us about the work you are planning</li>
+                        </ul>
+                        <p class="pp-text">We do not ask for payment details through this website, and we do not collect anything beyond what you send us.</p>
+                    </article>
 
-        <h2>Changes to This Policy</h2>
-        <p>If we ever need to update this policy, the revised version will appear on this page with a new date at the top. We do not anticipate any significant changes, because our approach to your data is not going to change: we collect only what we need and we use it only to help you.</p>
+                    <article class="pp-block reveal reveal-up">
+                        <span class="pp-num">02 / Why We Collect It</span>
+                        <h3 class="pp-title">To Talk To You About The Job</h3>
+                        <p class="pp-text">Your details are used for one purpose only: getting back in touch about your enquiry. That means replying to your message, arranging a visit to see the property, pricing the work, and keeping you updated while the project runs.</p>
+                        <p class="pp-text">We do not send marketing emails, we do not run newsletters, and we will not contact you about anything unrelated to the work you asked about.</p>
+                    </article>
 
-        <div class="policy-divider"></div>
+                    <article class="pp-block reveal reveal-up">
+                        <span class="pp-num">03 / Who Sees It</span>
+                        <h3 class="pp-title">Nobody Outside The Business</h3>
+                        <p class="pp-text">Your information stays with Marshall &amp; Co. We never sell it, rent it, or share it with third parties for marketing. The only exceptions are the ordinary tools we use to run the business, such as our email provider and the form service that delivers your enquiry to us, and anyone we are legally required to disclose information to.</p>
+                    </article>
 
-        <h2>Questions</h2>
-        <p>If you have any questions about how we handle your information, get in touch directly. We are a small team and we will give you a straight answer.</p>
+                    <article class="pp-block reveal reveal-up">
+                        <span class="pp-num">04 / How Long We Keep It</span>
+                        <h3 class="pp-title">Only As Long As It Is Useful</h3>
+                        <p class="pp-text">Enquiries are kept while we are in conversation with you and for a reasonable period afterwards, so we have a record of quotes given and work carried out. Where a job goes ahead, we keep the relevant records for as long as we need them for warranty, insurance and tax purposes. Once details are no longer needed, they are deleted.</p>
+                    </article>
 
-        <div class="mt-10 flex flex-col sm:flex-row items-center sm:items-start gap-4">
-          <a href="/contact" class="btn-primary">Get in Touch</a>
-          <a href="tel:07940568877" class="font-body font-bold text-base tracking-wide underline underline-offset-[8px] decoration-2 decoration-[#e8b238] hover:text-[#e8b238] transition-all duration-300" style="color:#303030;">
-            07940 568877
-          </a>
-        </div>
+                    <article class="pp-block reveal reveal-up">
+                        <span class="pp-num">05 / Your Rights</span>
+                        <h3 class="pp-title">Ask Us To Remove It Any Time</h3>
+                        <p class="pp-text">Under UK data protection law you can ask us what we hold about you, ask us to correct it, or ask us to delete it. Send a message to <a href="mailto:info@marshallandco.uk" class="pp-link">info@marshallandco.uk</a> or call <a href="tel:07940568877" class="pp-link">07940 568877</a> and we will sort it out. If you are ever unhappy with how we have handled your information, you can raise it with the Information Commissioner's Office.</p>
+                    </article>
 
-      </div>
-    </section>
+                    <article class="pp-block reveal reveal-up">
+                        <span class="pp-num">06 / Cookies</span>
+                        <h3 class="pp-title">Nothing Following You Around</h3>
+                        <p class="pp-text">This website does not use advertising or tracking cookies to build a profile of you. Any basic data recorded by our hosting provider is used purely to keep the site secure and running properly.</p>
+                    </article>
 
-  </main>
+                    <article class="pp-block reveal reveal-up" style="background:#303030; border-color:rgba(255,255,255,0.08);">
+                        <span class="pp-num">07 / Questions</span>
+                        <h3 class="pp-title" style="color:#ffffff;">Speak To Us Directly</h3>
+                        <p class="pp-text" style="color:rgba(255,255,255,0.78);">If anything here is unclear, ask. We would rather answer a question than leave you guessing. Email <a href="mailto:info@marshallandco.uk" class="pp-link" style="color:#ffffff;">info@marshallandco.uk</a>, call <a href="tel:07940568877" class="pp-link" style="color:#ffffff;">07940 568877</a>, or write to us at 2 Talisker Place, Perth, PH1 3GW.</p>
+                        <div style="margin-top:2rem;">
+                            <a href="/contact" class="btn-adaptive" style="display:inline-block; padding:0.85rem 2rem; font-weight:600; font-size:0.95rem; text-decoration:none;">Get In Touch</a>
+                        </div>
+                    </article>
 
-  <div id="footer-placeholder"></div>
-  <script src="/global.js"></script>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footer-placeholder"></div>
+    <script src="/global.js"></script>
+
 </body>
 </html>
