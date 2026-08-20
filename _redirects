@@ -120,7 +120,8 @@ https://marshallandco.uk/*   https://www.marshallandco.uk/:splat   301
 
 
 # ------------------------------------------------------------
-#  7. BLOG  ->  closest service  (no blog on the new site)
+#  7. BLOG  ->  closest service  (old WordPress posts only;
+#  /blog and /blog/* now serve natively - do not redirect them)
 #  The Scotland loft post pulled 752 impressions; it goes to the
 #  loft service so that demand is not binned.
 # ------------------------------------------------------------
@@ -135,8 +136,6 @@ https://marshallandco.uk/*   https://www.marshallandco.uk/:splat   301
 /blog/kitchen-design-tips-perth                     /services/kitchen-renovations  301
 /blog/how-much-does-home-renovation-cost-perth      /services/home-renovations     301
 /blog/how-to-choose-builder-perth                   /services                      301
-/blog/*                                             /services                      301
-/blog                                               /services                      301
 
 
 # ------------------------------------------------------------
