@@ -125,6 +125,9 @@ https://marshallandco.uk/*   https://www.marshallandco.uk/:splat   301
 #  The Scotland loft post pulled 752 impressions; it goes to the
 #  loft service so that demand is not binned.
 # ------------------------------------------------------------
+/blog       /blog/index.html   200
+/blog/      /blog/index.html   200
+
 /blog/loft-conversion-planning-permission-scotland  /services/loft-conversions     301
 /blog/house-extension-cost-perth                    /services/house-extensions     301
 /blog/best-garden-room-ideas-perth                  /services/garden-rooms         301
